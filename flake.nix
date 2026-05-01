@@ -23,11 +23,15 @@
 	  map (host: {
 	    name = host;
 	    value = lib.nixosSystem {
-
 	      modules = [
+		# host specific
 	        { config.networking.hostName = host; }
 		(./hosts + "/${host}")
 
+		# system modules
+		./modules/system
+
+		# home-manager
 		home-manager.nixosModules.home-manager
 		{
 		  home-manager.useGlobalPkgs = true;

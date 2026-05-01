@@ -1,0 +1,72 @@
+{ pkgs, ... }:
+
+{ 
+  # default packages to always include
+  environment.systemPackages = with pkgs; [ git neovim ];
+
+  # zones / locale
+  time.timeZone = "America/Chicago";
+  services.timesyncd.enable = true;
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
+  # zsh > bash
+  programs.zsh.enable = true;
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
+
+  # enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes"];
+
+  # networking
+  networking.networkmanager.enable = true;
+
+  # limit journald
+  services.journald.extraConfig = "SystemMaxUse=50M\nSystemMaxFiles=5";
+  services.journald.rateLimitBurst = 500;
+  services.journald.rateLimitInterval = "30s";
+
+  # binary caches
+  nix.settings = {
+    substituters = [
+      "https://cache.nixos.org"
+      "https://nix-community.cachix.org"
+    ];
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+    trusted-users = [ "@wheel" ];
+  };
+
+  # bootloader (grub)
+  boot.loader.grub.enable = true;
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.efiInstallAsRemovable = false;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot";
+  boot.loader.grub.device = "nodev";
+
+  # silent boot
+  boot.kernelParams = [
+    "quiet"
+    "splash"
+    "vga=current"
+    "rd.systemd.show"
+    "rd.udev.log_level=3"
+    "udev.log_priority=3"
+  ];
+  boot.initrd.systemd.enable = true;
+  boot.initrd.verbose = false;
+  boot.plymouth.enable = true;
+}
