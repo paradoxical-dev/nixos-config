@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+
+  systemSettings = {
+    bluetooth.enable = true;
+  }
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
