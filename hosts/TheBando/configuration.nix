@@ -3,8 +3,10 @@
 {
 
   systemSettings = {
+    users = [ "gitmoney" ];
+    adminUsers = [ "gitmoney" ];
     bluetooth.enable = true;
-  }
+  };
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -35,13 +37,16 @@
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # user settings
+  home-manager.users.gitmoney.userSettings = {
+    name = "gitmoney";
+    email = "jaredonnell21@gmail.com";
+  };
   users.users.gitmoney = {
     isNormalUser = true;
     description = "gitmoney";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-	ghostty
     	obsidian
     ];
   };
