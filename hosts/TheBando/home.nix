@@ -2,6 +2,9 @@
 
 {
   config = {
-    userSettings = { };
+    userSettings = { 
+      terminal = "ghostty";
+      browser = "librewolf";
+    };
   };
 }

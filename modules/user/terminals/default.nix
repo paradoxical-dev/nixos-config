@@ -6,7 +6,7 @@
 {
   options = {
     userSettings.terminal = lib.mkOption {
-      default = "ghostty";
+      default = null;
       description = "Default terminal";
       type = lib.types.enum [ "ghostty" "kitty" ];
     };
