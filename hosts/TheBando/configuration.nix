@@ -43,9 +43,7 @@
     email = "jaredonnell21@gmail.com";
   };
   users.users.gitmoney = {
-    isNormalUser = true;
     description = "gitmoney";
-    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     	obsidian
     ];
@@ -61,6 +59,4 @@
      tmux
      fzf
   ];
-
-  system.stateVersion = "25.11";
 }

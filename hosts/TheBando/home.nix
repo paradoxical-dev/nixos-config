@@ -2,7 +2,6 @@
 
 {
   config = {
-    home.stateVersion = "25.11";
     userSettings = { };
   };
 }
