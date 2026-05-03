@@ -1,5 +1,7 @@
 { lib, config, ... }:
 
+# INFO: Standard definition of whether to enable bluetooth
+
 let
   cfg = config.systemSettings.bluetooth;
 in

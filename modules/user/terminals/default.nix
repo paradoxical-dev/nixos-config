@@ -1,4 +1,8 @@
 { config, lib, ... }:
+
+# INFO: Defines the terminal to use for the system. The option value will be one
+# of the list options below, returning the default if none is provided
+
 {
   options = {
     userSettings.terminal = lib.mkOption {

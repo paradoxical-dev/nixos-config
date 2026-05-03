@@ -1,5 +1,7 @@
 { pkgs, ... }:
 
+# INFO: The default ocnfiguration that will (should) be present on all machines
+
 { 
   # default packages to always include
   environment.systemPackages = with pkgs; [ git neovim ];

@@ -1,5 +1,7 @@
 { lib, ... }:
 
+# INFO: defines home-manager's user definition
+
 {
   options = {
     userSettings = {

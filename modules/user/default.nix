@@ -1,5 +1,9 @@
 { lib, ... }:
 
+# INFO: Imports all modules within this directory. 
+# Whether or not the module is used depends on the options defined in 
+# userSettings of the hosts home.nix
+
 with lib;
 let
   # Recursively constructs an attrset of a given folder, 

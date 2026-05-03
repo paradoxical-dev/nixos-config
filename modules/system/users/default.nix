@@ -1,5 +1,9 @@
 { config, lib, ... }:
 
+# INFO: describes user options to be set within systemSettings.
+# Users list will then be mapped over and given their respective options in
+# both system and home-amnager contexts
+
 {
   options = {
     systemSettings = {
