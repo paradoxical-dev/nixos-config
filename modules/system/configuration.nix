@@ -4,7 +4,7 @@
 
 { 
   # default packages to always include
-  environment.systemPackages = with pkgs; [ git neovim ];
+  environment.systemPackages = with pkgs; [ git neovim gcc ];
 
   # zones / locale
   time.timeZone = "America/Chicago";

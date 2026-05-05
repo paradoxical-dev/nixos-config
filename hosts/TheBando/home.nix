@@ -5,6 +5,7 @@
     userSettings = { 
       terminal = "ghostty";
       browser = "librewolf";
+      cli = "base";
       langs = {
         node = {
 	  enable = true;
