@@ -5,8 +5,8 @@ in
 {
   options = {
     userSettings.langs.node = {
-      enable = lib.mkEnableOption "Enable Node.js"
-      nodemon.enable = lib.mkEnableOption "Enable nodemon system wide"
+      enable = lib.mkEnableOption "Enable Node.js";
+      nodemon.enable = lib.mkEnableOption "Enable nodemon system wide";
     };
   };
   config = lib.mkIf cfg.enable {

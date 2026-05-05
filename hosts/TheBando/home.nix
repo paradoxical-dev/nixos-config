@@ -10,6 +10,7 @@
 	  enable = true;
 	  nodemon.enable = true;
 	};
+	python.enable = true;
       };
     };
   };
