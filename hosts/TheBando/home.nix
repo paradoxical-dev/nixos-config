@@ -1,18 +1,19 @@
 { config, lib, pkgs, ... }:
 
 {
-  config = {
-    userSettings = { 
-      terminal = "ghostty";
-      browser = "librewolf";
-      cli = "base";
-      langs = {
-        node = {
-	  enable = true;
-	  nodemon.enable = true;
-	};
-	python.enable = true;
-      };
+    config = {
+        userSettings = { 
+            terminal = "ghostty";
+            browser = "brave";
+            cli = "extra";
+            langs = {
+                node = {
+                    enable = true;
+                    nodemon.enable = true;
+                };
+                python.enable = true;
+                rust.enable = true;
+            };
+        };
     };
-  };
 }
