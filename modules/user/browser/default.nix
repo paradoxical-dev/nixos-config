@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 # INFO: Option to select browser based on the list available.
 
@@ -10,7 +15,12 @@ in
     userSettings.browser = lib.mkOption {
       default = null;
       description = "Default browser";
-      type = lib.types.enum [ "firefox" "librewolf" "brave" null ];
+      type = lib.types.enum [
+        "firefox"
+        "librewolf"
+        "brave"
+        null
+      ];
     };
   };
 

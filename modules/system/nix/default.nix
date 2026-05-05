@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-# INFO: Sets some default nix settings. 
+# INFO: Sets some default nix settings.
 # Also sets nix-ld up; will update as needed
 
 {

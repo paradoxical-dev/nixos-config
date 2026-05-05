@@ -45,7 +45,7 @@
   users.users.gitmoney = {
     description = "gitmoney";
     packages = with pkgs; [
-    	obsidian
+      obsidian
     ];
   };
 
@@ -53,7 +53,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-     tmux
-     fzf
+    tmux
+    fzf
   ];
 }

@@ -1,29 +1,30 @@
 { lib, ... }:
 
-# INFO: Imports all modules within this directory. 
-# Whether or not the module is used depends on the options defined in 
+# INFO: Imports all modules within this directory.
+# Whether or not the module is used depends on the options defined in
 # userSettings of the hosts home.nix
 
 with lib;
 let
-  # Recursively constructs an attrset of a given folder, 
+  # Recursively constructs an attrset of a given folder,
   # recursing on directories, value of attrs is the filetype
-  getDir = dir: mapAttrs
-    (file: type:
-      if type == "directory" then getDir "${dir}/${file}" else type
-    )
-    (builtins.readDir dir);
+  getDir =
+    dir:
+    mapAttrs (file: type: if type == "directory" then getDir "${dir}/${file}" else type) (
+      builtins.readDir dir
+    );
 
   # Collects all files of a directory as a list of strings of paths
-  files = dir: collect isString (mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir));
+  files =
+    dir: collect isString (mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir));
 
   # Filters out directories that don't end with .nix or are this file
   # also makes the strings absolute
-  importAll = dir: map
-    (file: ./. + "/${file}")
-    (filter
-      (file: hasSuffix ".nix" file && file != "default.nix")
-      (files dir));
+  importAll =
+    dir:
+    map (file: ./. + "/${file}") (
+      filter (file: hasSuffix ".nix" file && file != "default.nix") (files dir)
+    );
 
 in
 {

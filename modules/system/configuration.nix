@@ -2,9 +2,13 @@
 
 # INFO: The default ocnfiguration that will (should) be present on all machines
 
-{ 
+{
   # default packages to always include
-  environment.systemPackages = with pkgs; [ git neovim gcc ];
+  environment.systemPackages = with pkgs; [
+    git
+    neovim
+    gcc
+  ];
 
   # zones / locale
   time.timeZone = "America/Chicago";
@@ -28,7 +32,10 @@
   users.defaultUserShell = pkgs.zsh;
 
   # enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # networking
   networking.networkmanager.enable = true;

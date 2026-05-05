@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.userSettings.langs.node;
 in
@@ -10,10 +15,13 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      nodejs
-    ] ++ lib.optionals cfg.nodemon.enable [
-      nodemon
-    ];
+    home.packages =
+      with pkgs;
+      [
+        nodejs
+      ]
+      ++ lib.optionals cfg.nodemon.enable [
+        nodemon
+      ];
   };
 }

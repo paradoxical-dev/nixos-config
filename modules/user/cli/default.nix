@@ -13,7 +13,11 @@ in
     userSettings.cli = lib.mkOption {
       default = null;
       description = "CLI tools";
-      type = lib.types.enum [ "base" "extra" null ];
+      type = lib.types.enum [
+        "base"
+        "extra"
+        null
+      ];
     };
   };
   config = {
