@@ -1,12 +1,19 @@
 { config, lib, pkgs, ... }:
+
 let
-  cfg = config.userSettings.cliExtra;
+    cfg = config.userSettings.cliExtra;
 in
 {
-  options = {
-    userSettings.cliExtra = {
-      enable = lib.mkEnableOption "Enable extra CLI tools";
+    options = {
+        userSettings.cliExtra = {
+            enable = lib.mkEnableOption "Enable extra CLI tools";
+        };
     };
-  };
-  config = lib.mkIf cfg.enable { };
+    config = lib.mkIf cfg.enable {
+        home.packages = with pkgs; [
+            figlet
+            chafa
+            fastfetch
+        ];
+    };
 }
