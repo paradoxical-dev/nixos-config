@@ -5,6 +5,12 @@
     userSettings = { 
       terminal = "ghostty";
       browser = "librewolf";
+      langs = {
+        node = {
+	  enable = true;
+	  nodemon.enable = true;
+	};
+      };
     };
   };
 }
