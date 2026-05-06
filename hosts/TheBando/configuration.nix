@@ -6,6 +6,7 @@
     users = [ "gitmoney" ];
     adminUsers = [ "gitmoney" ];
     bluetooth.enable = true;
+    printing.enable = true;
   };
 
   # Use latest kernel.
@@ -24,9 +25,6 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -38,12 +36,12 @@
   };
 
   # user settings
+  users.users.gitmoney.description = "gitmoney";
   home-manager.users.gitmoney.userSettings = {
     name = "gitmoney";
     email = "jaredonnell21@gmail.com";
   };
   users.users.gitmoney = {
-    description = "gitmoney";
     packages = with pkgs; [
       obsidian
     ];
@@ -52,9 +50,9 @@
   # documentation
   documentation.enable = true;
   documentation.man.enable = true;
+  documentation.man.cache.enable = true;
   documentation.info.enable = true;
   documentation.doc.enable = true;
-  documentation.man.generateCaches = true;
   documentation.dev.enable = true;
   documentation.nixos.enable = true;
 
