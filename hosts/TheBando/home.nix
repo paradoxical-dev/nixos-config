@@ -10,6 +10,10 @@
       ];
       starship.enable = true;
       cli = "extra";
+      editors = [
+        "neovim"
+        "vscodium"
+      ];
       browser = "brave";
       obsidian.enable = true;
       langs = {
