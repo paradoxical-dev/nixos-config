@@ -128,6 +128,9 @@ in
         export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK        
         export ZVM_KEYTIMEOUT=0
         export ZVM_VI_HIGHLIGHT_BACKGROUND=#45475b
+
+        # starship
+        eval "$(starship init zsh)"
       '';
     };
   };

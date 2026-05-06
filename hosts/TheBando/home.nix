@@ -8,8 +8,10 @@
         "zsh"
         "nushell"
       ];
+      starship.enable = true;
       cli = "extra";
       browser = "brave";
+      obsidian.enable = true;
       langs = {
         node = {
           enable = true;
@@ -18,7 +20,6 @@
         python.enable = true;
         rust.enable = true;
       };
-      obsidian.enable = true;
     };
   };
 }
