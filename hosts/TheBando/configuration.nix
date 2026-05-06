@@ -5,12 +5,10 @@
   systemSettings = {
     users = [ "gitmoney" ];
     adminUsers = [ "gitmoney" ];
+    kernel.type = "latest";
     bluetooth.enable = true;
     printing.enable = true;
   };
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
