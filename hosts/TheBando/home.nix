@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ ... }:
 
 {
   config = {
@@ -23,6 +18,7 @@
         python.enable = true;
         rust.enable = true;
       };
+      obsidian.enable = true;
     };
   };
 }

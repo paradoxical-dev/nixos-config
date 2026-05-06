@@ -29,11 +29,6 @@
     name = "gitmoney";
     email = "jaredonnell21@gmail.com";
   };
-  users.users.gitmoney = {
-    packages = with pkgs; [
-      obsidian
-    ];
-  };
 
   # documentation
   documentation.enable = true;
