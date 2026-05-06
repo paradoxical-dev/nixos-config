@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -15,11 +14,20 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.ghostty ];
     programs.ghostty.enable = true;
     programs.ghostty.systemd.enable = true;
     programs.ghostty.settings = {
-      # TODO
+      font-size = "13";
+      font-family = "JetBrainsMono Nerd Font";
+      font-family-italic = "Victor Mono";
+      font-family-bold-italic = "Victor Mono";
+
+      theme = "Nord";
+
+      window-decoration = "none";
+      window-padding-x = 5;
+      window-padding-y = 5;
+      window-padding-balance = true;
     };
   };
 }
