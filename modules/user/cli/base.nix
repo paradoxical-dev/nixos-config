@@ -15,10 +15,8 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
-    # TODO: move to separate file; enable options here
-    # programs.fzf.enable = true;
-    # programs.tmux.enable = true;
     userSettings.tmux.enable = true;
+    userSettings.fzf.enable = true;
     home.packages = with pkgs; [
       bat
       bottom
