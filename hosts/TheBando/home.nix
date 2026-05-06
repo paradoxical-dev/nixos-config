@@ -4,12 +4,12 @@
   config = {
     userSettings = {
       terminal = "ghostty";
-      browser = "brave";
       shells = [
         "zsh"
         "nushell"
       ];
       cli = "extra";
+      browser = "brave";
       langs = {
         node = {
           enable = true;

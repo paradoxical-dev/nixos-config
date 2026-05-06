@@ -8,6 +8,10 @@
     kernel.type = "latest";
     bluetooth.enable = true;
     printing.enable = true;
+    fonts = {
+      std = with pkgs; [ victor-mono ];
+      nerd = with pkgs; [ nerd-fonts.jetbrains-mono ];
+    };
   };
 
   # Enable the X11 windowing system.
