@@ -8,6 +8,8 @@
     git
     neovim
     gcc
+    man-pages
+    man-pages-posix
   ];
 
   # zones / locale

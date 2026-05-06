@@ -10,6 +10,10 @@
     userSettings = {
       terminal = "ghostty";
       browser = "brave";
+      shells = [
+        "zsh"
+        "nushell"
+      ];
       cli = "extra";
       langs = {
         node = {
