@@ -16,9 +16,10 @@ in
   };
   config = lib.mkIf cfg.enable {
     # handle neovim conf outside of home-manager
-    home.packages = with pkgs; [ neovim ];
-    # programs.neovim = {
-    #   enable = true;
-    # };
+    home.packages = with pkgs; [
+      neovim
+      gcc # for installing tree-sitter parsers
+      nodejs # for installing lsp servers
+    ];
   };
 }
