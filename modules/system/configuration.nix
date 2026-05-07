@@ -7,7 +7,6 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
-    gcc
     man-pages
     man-pages-posix
   ];
@@ -27,6 +26,12 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  # documentation
+  documentation.enable = true;
+  documentation.man.enable = true;
+  documentation.man.cache.enable = true;
+  documentation.info.enable = true;
 
   # zsh > bash
   programs.zsh.enable = true;

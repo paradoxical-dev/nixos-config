@@ -34,15 +34,6 @@
     email = "jaredonnell21@gmail.com";
   };
 
-  # documentation
-  documentation.enable = true;
-  documentation.man.enable = true;
-  documentation.man.cache.enable = true;
-  documentation.info.enable = true;
-  documentation.doc.enable = true;
-  documentation.dev.enable = true;
-  documentation.nixos.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 }
