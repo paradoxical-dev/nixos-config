@@ -3,6 +3,7 @@
 {
   config = {
     userSettings = {
+      dotfilesDir = "/home/gitmoney/.dotfiles";
       terminal = "ghostty";
       shells = [
         "zsh"
