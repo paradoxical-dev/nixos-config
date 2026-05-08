@@ -25,7 +25,8 @@ in
       kicad
       gnuplot
       octave
-      ltspice
+      # ltspice
+      ngspice
       python313Packages.numpy
       python313Packages.matplotlib
     ];
