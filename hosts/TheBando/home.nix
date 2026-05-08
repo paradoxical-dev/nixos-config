@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   config = {
@@ -25,7 +25,12 @@
           enable = true;
           nodemon.enable = true;
         };
-        python.enable = true;
+        python = {
+          enable = true;
+          extraPkgs = with pkgs.python313Packages; [
+            pandas
+          ];
+        };
         rust.enable = true;
       };
     };
