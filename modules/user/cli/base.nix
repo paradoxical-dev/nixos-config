@@ -35,6 +35,7 @@ in
       smartmontools
       tealdeer
       unzip
+      w3m
       zip
     ];
   };

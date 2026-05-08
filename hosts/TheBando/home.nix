@@ -16,9 +16,11 @@
         "vscodium"
       ];
       browser = "brave";
+      engineering.enable = true;
       gnome.enable = true;
       obsidian.enable = true;
       langs = {
+        zeal.enable = true;
         node = {
           enable = true;
           nodemon.enable = true;

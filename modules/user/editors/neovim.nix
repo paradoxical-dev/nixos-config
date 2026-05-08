@@ -18,10 +18,11 @@ in
     # handle neovim conf outside of home-manager
     home.packages = with pkgs; [
       neovim
+      tree-sitter
       gcc # for installing tree-sitter parsers
       nodejs # for installing lsp servers
-      pandoc # for devdocs plugin
-      jq # for devdocs plugin
+      sqlite # for zeal plugin
+      jq # for kulala plugin
     ];
   };
 }
