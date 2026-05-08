@@ -15,6 +15,7 @@
         "vscodium"
       ];
       browser = "brave";
+      gnome.enable = true;
       obsidian.enable = true;
       langs = {
         node = {
