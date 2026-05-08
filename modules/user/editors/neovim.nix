@@ -20,6 +20,8 @@ in
       neovim
       gcc # for installing tree-sitter parsers
       nodejs # for installing lsp servers
+      pandoc # for devdocs plugin
+      jq # for devdocs plugin
     ];
   };
 }
