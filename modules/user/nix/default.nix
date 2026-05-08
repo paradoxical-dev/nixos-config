@@ -9,6 +9,7 @@
       nil
       nixd
       nixdoc
+      nh
     ];
   };
 }
