@@ -17,6 +17,10 @@
       ];
       browser = "brave";
       engineering.enable = true;
+      research = {
+        enable = true;
+        texlivePackages = [ pkgs.texliveSmall ];
+      };
       gnome.enable = true;
       obsidian.enable = true;
       langs = {

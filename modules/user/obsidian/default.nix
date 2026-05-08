@@ -18,6 +18,9 @@ in
   };
   config = lib.mkIf cfg.enable {
     # I typically don't manage obsidian with home-manager
-    home.packages = with pkgs; [ obsidian ];
+    home.packages = with pkgs; [
+      obsidian
+      pandoc
+    ];
   };
 }
