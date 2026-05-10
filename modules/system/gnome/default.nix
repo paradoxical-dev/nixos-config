@@ -5,7 +5,8 @@
   ...
 }:
 
-# INFO: Enables GNOME + GDM and defines base extensions
+# INFO: Enables GNOME + GDM and defines base extensions. Also installs
+# other ui packages like cursors, icons etc.
 
 # NOTE: There is also the corresponding `user/gnome` module. This module will
 # take care of dconf settings and extension enabling/disabling
@@ -50,7 +51,10 @@ in
     # extensions / extras
     environment.systemPackages = with pkgs; [
       papirus-icon-theme
+      orchis-theme
+      bibata-cursors
       gnome-tweaks
+      gnomeExtensions.user-themes
       gnomeExtensions.open-bar
       gnomeExtensions.vitals
       gnomeExtensions.blur-my-shell

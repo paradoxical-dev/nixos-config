@@ -5,7 +5,7 @@
   ...
 }:
 
-# INFO: Handles the dconf settings for the GNOME DE
+# INFO: Handles the dconf settings for the GNOME DE along with gtk theming
 
 let
   cfg = config.userSettings.gnome;
@@ -17,6 +17,22 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
+    gtk = {
+      enable = true;
+      # theme = {
+      #   name = "Orchis-Teal-Dark";
+      #   package = pkgs.orchis-theme;
+      # };
+      # gtk4.theme = config.gtk.theme;
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.papirus-icon-theme;
+      };
+      cursorTheme = {
+        name = "Bibata-Modern-Ice";
+        package = pkgs.bibata-cursors;
+      };
+    };
     dconf = {
       enable = true;
       settings = {
@@ -62,6 +78,7 @@ in
         };
         "org/gnome/shell" = {
           enabled-extensions = [
+            pkgs.gnomeExtensions.user-themes.extensionUuid
             pkgs.gnomeExtensions.open-bar.extensionUuid
             pkgs.gnomeExtensions.vitals.extensionUuid
             pkgs.gnomeExtensions.blur-my-shell.extensionUuid
