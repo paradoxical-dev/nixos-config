@@ -21,8 +21,9 @@
         enable = true;
         texlivePackages = [ pkgs.texliveSmall ];
       };
-      gnome.enable = true;
       obsidian.enable = true;
+      webull.enable = true;
+      gnome.enable = true;
       langs = {
         zeal.enable = true;
         node = {
