@@ -24,6 +24,7 @@ in
       font-family-bold-italic = "Victor Mono";
 
       theme = "${themePath}/Nordic";
+      # theme = "Everforest Dark Hard";
 
       window-decoration = "none";
       # window-padding-x = 5;

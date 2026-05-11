@@ -23,7 +23,7 @@ in
         format = lib.concatStrings [
           "[┌](fg:#999999)"
           "[ 󱜿 ](bg:purple fg:black)"
-          "[](fg:purple bg:black)"
+          "[](fg:purple bg:none)"
           "$directory"
           "$git_branch"
           "$git_status\n"
@@ -41,7 +41,7 @@ in
           untracked = "";
           modified = "";
           staged = "";
-          format = "[$untracked$modified$staged ](bg:bright-cyan fg:black)[](fg:bright-cyan bg:black)";
+          format = "[$untracked$modified$staged ](bg:bright-cyan fg:black)[](fg:bright-cyan bg:none)";
         };
         character = {
           success_symbol = "[❯](bold green)";
