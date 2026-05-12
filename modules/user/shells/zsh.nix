@@ -88,6 +88,7 @@ in
 
         # FZF #
         eval "$(fzf --zsh)"
+        source $HOME/.config/zsh/fzf-colors.sh
         zstyle ":completion:*" menu no
         zstyle ":fzf-tab:*" use-fzf-default-opts yes
 

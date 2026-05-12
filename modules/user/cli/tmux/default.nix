@@ -32,6 +32,9 @@ in
       extraConfig = ''
         # BASE #
 
+        # source theme file
+        source-file ~/.config/tmux/colors.conf
+
         # colors
         set-option -ga terminal-overrides ",xterm-256color:Tc"
 
@@ -67,11 +70,6 @@ in
         set-option -g message-command-style 'fg=#94e2d5,bg=default'
 
         # vars
-        main_accent="#8fbcbb"
-        secondary_accent="#b48ead"
-        tertiary_accent="#a3be8c"
-        text_on_accent="#1e1e2e"
-        gray_text="#666666"
         prefix_color="#{?client_prefix,''${secondary_accent},''${main_accent}}"
         window_symbol="󰖯"
         monitor_symbol=""

@@ -23,12 +23,9 @@ in
       font-family-italic = "Victor Mono";
       font-family-bold-italic = "Victor Mono";
 
-      theme = "${themePath}/Nordic";
-      # theme = "Everforest Dark Hard";
+      theme = "${config.home.homeDirectory}/.config/ghostty/themes/current";
 
       window-decoration = "none";
-      # window-padding-x = 5;
-      # window-padding-y = 5;
       window-padding-balance = true;
     };
   };
