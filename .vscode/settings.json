@@ -1,0 +1,6 @@
+{
+  "nixd.nixpkgs.expr": "import <nixpkgs> {}",
+  "nixd.formatting.command": ["nixfmt"],
+  "nixd.options.nixos.expr": "(builtins.getFlake (toString ./.)).nixosConfigurations.TheBando.options",
+  "nixd.options.home_manager.expr": "(builtins.getFlake (toString ./.)).homeConfigurations.\"gitmoney@TheBando\".options",
+}
