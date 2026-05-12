@@ -20,9 +20,8 @@ in
       neovim
       tree-sitter
       gcc # for installing tree-sitter parsers
-      nodejs # for installing lsp servers
       sqlite # for zeal plugin
-      jq # for kulala plugin
+      elinks # for apidocs plugin
     ];
   };
 }
