@@ -8,7 +8,7 @@ Also contained in this directory is the [home.nix](./home.nix) file. This file d
 
 ## Modules
 
-- [browser](.browser//)
+- [browser](./browser/)
 - [cli](./cli/)
 - [editors](./editors/)
 - [engineering](./engineering/)
