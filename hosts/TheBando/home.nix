@@ -36,7 +36,13 @@
             pandas
           ];
         };
-        rust.enable = true;
+        rust = {
+          enable = true;
+          extraPkgs = [
+            pkgs.rustfmt
+            pkgs.rust-analyzer
+          ];
+        };
       };
     };
   };

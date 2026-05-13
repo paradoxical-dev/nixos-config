@@ -13,7 +13,7 @@ in
 {
   options = {
     userSettings.shells = lib.mkOption {
-      default = "zsh";
+      default = [ "zsh" ];
       description = "Shells to include";
       type = lib.types.listOf (
         lib.types.enum [
