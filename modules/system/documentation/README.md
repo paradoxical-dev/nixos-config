@@ -13,5 +13,6 @@ Option to include extra local documentation on the system. This includes:
 Enables the installation of extra documentation on the system
 
 **Type**: `bool`
+
 **Default**: `false`
 

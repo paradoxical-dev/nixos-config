@@ -9,5 +9,6 @@ Adds the option to enable printing on the system. The module will enable the pri
 Enables the printing service and installs the `cups-filter` package
 
 **Type**: `bool`
+
 **Default**: `false`
 

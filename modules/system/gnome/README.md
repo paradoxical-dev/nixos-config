@@ -27,5 +27,6 @@ Installs the GNOME desktop environment. Also handles the installation of GNOME e
 Enables the installation of the GNOME desktop environment and accompying packages
 
 **Type**: `bool`
+
 **Default**: `false`
 

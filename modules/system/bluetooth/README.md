@@ -9,4 +9,5 @@ Option to enable bluetooth functionality on the system
 Enables bluetooth functionality on the system
 
 **Type**: `bool`
+
 **Default**: `false`

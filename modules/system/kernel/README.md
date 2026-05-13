@@ -9,7 +9,9 @@ Defines options for the installed kernel. Includes kernel version, hardening and
 The version of the kernel to install
 
 **Type**: `enum`
+
 **Values**: `"latest"` | `"lts"`
+
 **Default**: `"latest"`
 
 

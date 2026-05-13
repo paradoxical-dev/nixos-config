@@ -16,4 +16,5 @@ Default: `[]`
 A list of users to create as admin users
 
 **Type**: `list`
+
 Default: `[]`

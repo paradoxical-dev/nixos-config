@@ -11,5 +11,6 @@ Enables the `pulseaudio` service and configures it to use the `alsa` as the main
 Enables the installation of audio packages on the system
 
 **Type**: `bool`
+
 **Default**: `true`
 
