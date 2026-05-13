@@ -19,7 +19,7 @@
 
     let
       lib = nixpkgs.lib;
-      hosts = builtins.filter (x: x != null) (
+      hosts = builtins.filter (x: x != null && x != "TEMPLATE") (
         lib.mapAttrsToList (k: v: if (v == "directory") then k else null) (builtins.readDir ./hosts)
       );
     in
