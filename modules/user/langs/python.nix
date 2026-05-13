@@ -12,6 +12,22 @@ in
   options = {
     userSettings.langs.python = {
       enable = lib.mkEnableOption "Enable python";
+      lsp = {
+        enable = lib.mkEnableOption "Enable python lsp";
+        package = lib.mkOption {
+          default = pkgs.pyright;
+          description = "Python lsp package";
+          type = lib.types.package;
+        };
+      };
+      formatter = {
+        enable = lib.mkEnableOption "Enable python formatter";
+        package = lib.mkOption {
+          default = pkgs.ruff;
+          description = "Python formatter package";
+          type = lib.types.package;
+        };
+      };
       extraPkgs = lib.mkOption {
         default = [ ];
         description = "Extra python packages to include";
@@ -20,11 +36,10 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
-    home.packages =
-      with pkgs;
-      [
-        python3
-      ]
-      ++ cfg.extraPkgs;
+    home.packages = [
+      (pkgs.python3.withPackages (_: cfg.extraPkgs))
+    ]
+    ++ lib.optionals cfg.lsp.enable [ cfg.lsp.package ]
+    ++ lib.optionals cfg.formatter.enable [ cfg.formatter.package ];
   };
 }

@@ -32,9 +32,9 @@
         };
         python = {
           enable = true;
-          extraPkgs = with pkgs.python313Packages; [
-            pandas
-          ];
+          lsp.enable = true;
+          formatter.enable = true;
+          extraPkgs = with pkgs.python3Packages; [ pandas ];
         };
         rust = {
           enable = true;

@@ -25,11 +25,15 @@ in
       kicad
       gnuplot
       octave
-      # ltspice
       ngspice
-      python313Packages.numpy
-      python313Packages.matplotlib
-      python313Packages.scipy
+    ];
+
+    # extend pythons package list rather than install standalone
+    userSettings.langs.python.enable = true;
+    userSettings.langs.python.extraPkgs = with pkgs.python3Packages; [
+      numpy
+      matplotlib
+      scipy
     ];
   };
 }
