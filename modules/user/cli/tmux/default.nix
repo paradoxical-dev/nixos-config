@@ -33,7 +33,7 @@ in
         # BASE #
 
         # source theme file
-        source-file ~/.config/tmux/colors.conf
+        source-file ${config.home.homeDirectory}/.config/tmux/colors.conf
 
         # colors
         set-option -ga terminal-overrides ",xterm-256color:Tc"
@@ -70,7 +70,7 @@ in
         set-option -g message-command-style 'fg=#94e2d5,bg=default'
 
         # vars
-        prefix_color="#{?client_prefix,''${secondary_accent},''${main_accent}}"
+        prefix_color="#{?client_prefix,#{@secondary_accent},#{@main_accent}}"
         window_symbol="󰖯"
         monitor_symbol=""
         active_space_symbol=""
@@ -86,15 +86,15 @@ in
         set-option -g status-left-length 150
         set-option -g status-left "\
         #[fg=''${prefix_color}]''${left_section_icon}\
-        #[fg=''${text_on_accent},bg=''${prefix_color}]''${window_symbol} #S\
+        #[fg=#{@text_on_accent},bg=''${prefix_color}]''${window_symbol} #S\
         #[fg=''${prefix_color},bg=default]''${right_section_icon} "
 
         # tabs
         set-window-option -g window-status-format "\
-        #[fg=''${gray_text},bg=default] ''${inactive_space_symbol}  #W "
+        #[fg=#{@gray_text},bg=default] ''${inactive_space_symbol}  #W "
 
         set-window-option -g window-status-current-format "\
-        #[fg=''${main_accent},bg=default] ''${active_space_symbol} \
+        #[fg=#{@main_accent},bg=default] ''${active_space_symbol} \
         #[fg=bright,bg=default] #W "
 
         set-window-option -g window-status-separator ""
@@ -102,11 +102,11 @@ in
         # right side #
 
         set-option -g status-right "\
-        #[fg=''${gray_text},bg=default]''${hostname_icon} #h  \
-        #[fg=''${gray_text},bg=default]''${ip_icon} #(hostname -I | awk '{print $1}')  \
-        #[fg=''${secondary_accent},bg=default] ''${left_section_icon}\
-        #[fg=''${text_on_accent},bg=''${secondary_accent}]''${monitor_symbol}  #{session_attached}\
-        #[fg=''${secondary_accent},bg=default]''${right_section_icon}"
+        #[fg=#{@gray_text},bg=default]''${hostname_icon} #h  \
+        #[fg=#{@gray_text},bg=default]''${ip_icon} #(hostname -I | awk '{print $1}')  \
+        #[fg=#{@secondary_accent},bg=default] ''${left_section_icon}\
+        #[fg=#{@text_on_accent},bg=#{@secondary_accent}]''${monitor_symbol}  #{session_attached}\
+        #[fg=#{@secondary_accent},bg=default]''${right_section_icon}"
 
         set-option -g status-right-length 100
       '';
