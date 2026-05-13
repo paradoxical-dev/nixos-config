@@ -1,8 +1,6 @@
 # nixos-config
 
-A modular configuration for [NixOS](https://nixos.org/), able to be run on any system. 
-
-Provides a set of modules for enabling/disabling parts of the system, so each install is exactly as described.
+A modular configuration for [NixOS](https://nixos.org/), supporting multiple machines from a single repository
 
 SCREENSHOTS HERE
 
@@ -10,14 +8,20 @@ SCREENSHOTS HERE
 
 This project is a collection of modules for an easy installation of NixOS across different machines.
 
-Each module is a self-contained Nix expression that can be used to install the provided package(s). Each host will be contained within the [hosts](https://github.com/paradoxical-dev/nixos-config/tree/main/hosts/) directory. The host's directory must also contain each of:
+Each module is a self-contained Nix expression that can be used to install the provided package(s). Each host will be contained within the [hosts](hosts/README.md) directory. The host's directory must also contain each of:
 
-- configuration.nix
-- home.nix
-- hardware-configuration.nix
+- [configuration.nix](hosts/TheBando/configuration.nix)
+- [home.nix](hosts/TheBando/home.nix)
+- [hardware-configuration.nix](hosts/TheBando/hardware-configuration.nix)
 
 > [!WARNING]
-> Hosts contained within the [hosts](https://github.com/paradoxical-dev/nixos-config/tree/main/hosts/) directory must exactly match the desired hostname of the given machine.
+> Hosts contained within the [hosts](hosts/README.md) directory must exactly match the desired hostname of the given machine.
+
+## Structure
+
+Modules are declared within the [modules](modules/README.md) directory within either the [system](modules/system/README.md) or [user](modules/user/README.md) sub directory.
+
+Each module contained within either of these directories will also cotnain a `README` file covering the options provided, the packages it enables, and how to enable them.
 
 # Installation
 
