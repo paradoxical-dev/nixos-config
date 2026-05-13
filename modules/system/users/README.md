@@ -9,7 +9,8 @@ This module creates an option to create user(s) and admin user(s) on the system.
 A list of users to create.
 
 **Type**: `list`
-Default: `[]`
+
+**Default**: `[]`
 
 ### `adminUsers`
 
@@ -17,4 +18,4 @@ A list of users to create as admin users
 
 **Type**: `list`
 
-**Default:** `[]`
+**Default**: `[]`

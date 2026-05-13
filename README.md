@@ -37,18 +37,20 @@ Installing this config *should* be as simple as:
 
 2. Fork the repository
 
-REPLACE `<destination path>` with the path you want to clone the repository to
+> [!WARNING]
+> REPLACE `<destination path>` with the path you want to clone the repository to
+
 ```bash
 git clone https://github.com/paradoxical-dev/nixos-config.git <destination path>
 ```
 
 3. Create your hosts directory and files
 
-Within the repo, create a directory for the host you want to install. For example, if your hostname was `Test` then create the directory:
+Within the repo, create a new host directory by copying the [TEMPLATE](hosts/TEMPLATE) directory and rename it to the systems hostname. For example if your hostname was Test:
 
 ```bash
 # from within the repo's cloned directory
-mkdir hosts/Test
+cp -r hosts/TEMPLATE hosts/Test
 ```
 
 Then copy over the `hardware-configuration.nix` file
@@ -57,7 +59,7 @@ Then copy over the `hardware-configuration.nix` file
 cp /etc/nixos/hardware-configuration.nix hosts/Test/hardware-configuration.nix
 ```
 
-After that, you'll need to create the `configuration.nix` and `home.nix` files within the host's directory. These files will define the packages that the system will install.
+After that, you'll need to edit the `configuration.nix` and `home.nix` files within the host's directory. These files will define the packages that the system will install.
 
 > [!NOTE]
 > See my [configuration](hosts/TheBando/configuration.nix) and [home](hosts/TheBando/home.nix) files for examples
