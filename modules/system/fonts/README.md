@@ -9,6 +9,7 @@ Font packages for the system.
 A list of stanfard fonts to install.
 
 **Type**: `list`
+
 Default: `[ pkgs.noto-fonts ]`
 
 ### `fonts.nerd`
