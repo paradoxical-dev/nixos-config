@@ -22,6 +22,10 @@ in
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
+        # system
+        update = "nh os switch ${config.userSettings.dotfilesDir}#$(hostname)";
+        cleanup = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
+
         # base
         c = "clear";
         ff = "fastfetch";
