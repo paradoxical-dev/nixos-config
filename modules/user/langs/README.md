@@ -14,6 +14,8 @@ Enables the installation of Zeal
 
 **Default**: `false`
 
+---
+
 ### `langs.python`
 
 An attribute set to describe installing python on the system
@@ -65,6 +67,8 @@ A list of additional python packages to install. Packages must be within the `py
 **Type**: `list[package]`
 
 **Default**: `[ ]`
+
+---
 
 ### `langs.node`
 
@@ -125,6 +129,8 @@ A list of additional nodejs packages to install
 **Type**: `list[package]`
 
 **Default**: `[ ]`
+
+---
 
 ### `langs.rust`
 
