@@ -2,6 +2,9 @@
 
 Installs the GNOME desktop environment. Also handles the installation of GNOME extensions, icon packs, and cursor packages. Refer to the respective [users module](../users/gnome/) for home-manager options.
 
+![GNOME home](https://i.imgur.com/Q8bVL0r.png)
+![GNOME apps](https://i.imgur.com/ylXNLLP.png)
+
 ## Packages
 
 - Papirus Icon Pack
