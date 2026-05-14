@@ -29,6 +29,8 @@
         node = {
           enable = true;
           nodemon.enable = true;
+          lsp.enable = true;
+          formatter.enable = true;
         };
         python = {
           enable = true;
@@ -38,10 +40,8 @@
         };
         rust = {
           enable = true;
-          extraPkgs = [
-            pkgs.rustfmt
-            pkgs.rust-analyzer
-          ];
+          lsp.enable = true;
+          formatter.enable = true;
         };
       };
     };

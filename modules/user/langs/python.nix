@@ -14,18 +14,18 @@ in
       enable = lib.mkEnableOption "Enable python";
       lsp = {
         enable = lib.mkEnableOption "Enable python lsp";
-        package = lib.mkOption {
-          default = pkgs.pyright;
+        packages = lib.mkOption {
+          default = [ pkgs.pyright ];
           description = "Python lsp package";
-          type = lib.types.package;
+          type = lib.types.listOf lib.types.package;
         };
       };
       formatter = {
         enable = lib.mkEnableOption "Enable python formatter";
-        package = lib.mkOption {
-          default = pkgs.ruff;
-          description = "Python formatter package";
-          type = lib.types.package;
+        packages = lib.mkOption {
+          default = [ pkgs.ruff ];
+          description = "Python formatter package(s)";
+          type = lib.types.listOf lib.types.package;
         };
       };
       extraPkgs = lib.mkOption {
@@ -39,7 +39,7 @@ in
     home.packages = [
       (pkgs.python3.withPackages (_: cfg.extraPkgs))
     ]
-    ++ lib.optionals cfg.lsp.enable [ cfg.lsp.package ]
-    ++ lib.optionals cfg.formatter.enable [ cfg.formatter.package ];
+    ++ lib.optionals cfg.lsp.enable cfg.lsp.packages
+    ++ lib.optionals cfg.formatter.enable cfg.formatter.packages;
   };
 }

@@ -26,9 +26,41 @@ Enables the installation of python (uses the python3 package)
 
 **Default**: `false`
 
+#### `lsp.enable`
+
+Enable installing a python LSP
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `lsp.packages`
+
+A list of python LSPs to install
+
+**Type**: `list[package]`
+
+**Default**: `[ pkgs.pyright ]`
+
+#### `formatter.enable`
+
+Enable installing a python formatter
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `formatter.packages`
+
+A list of python formatters to install
+
+**Type**: `list[package]`
+
+**Default**: `[ pkgs.ruff ]`
+
 #### `extraPackages`
 
-A list of additional python packages to install
+A list of additional python packages to install. Packages must be within the `python3Packages` package set. See an example in my [home.nix](../../../hosts/TheBando/home.nix)
 
 **Type**: `list[package]`
 
@@ -54,6 +86,38 @@ Enables the systemwide installation of nodemon
 
 **Default**: `false`
 
+#### `lsp.enable`
+
+Enable installing a JS/TS LSP
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `lsp.packages`
+
+A list of JS/TS LSPs to install
+
+**Type**: `list[package]`
+
+**Default**: `[ pkgs.typescript pkgs.typescript-language-server ]`
+
+#### `formatter.enable`
+
+Enable installing a JS/TS formatter
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `formatter.packages`
+
+A list of JS/TS formatters to install
+
+**Type**: `list[package]`
+
+**Default**: `[ pkgs.prettier ]`
+
 #### `extraPackages`
 
 A list of additional nodejs packages to install
@@ -73,6 +137,38 @@ Enables the installation of rust
 **Type**: `bool`
 
 **Default**: `false`
+
+#### `lsp.enable`
+
+Enable installing a rust LSP
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `lsp.packages`
+
+A list of rust LSPs to install
+
+**Type**: `list[package]`
+
+**Default**: `[ pkgs.rust-analyzer ]`
+
+#### `formatter.enable`
+
+Enable installing a rust formatter
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `formatter.packages`
+
+A list of rust formatters to install
+
+**Type**: `list[package]`
+
+**Default**: `[ pkgs.rustfmt ]`
 
 #### `extraPackages`
 
