@@ -179,3 +179,49 @@ A list of rust formatters to install
 #### `extraPackages`
 
 A list of additional rust packages to install
+
+---
+
+### `langs.lua`
+
+An attribute set to describe installing lua on the system
+
+#### `enable`
+
+Enables the installation of language
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `lsp.enable`
+
+Enable installing a lua LSP
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `lsp.packages`
+
+A list of lua LSPs to install
+
+**Type**: `list[package]`
+
+**Default**: `[ pkgs.lua-language-server ]`
+
+#### `formatter.enable`
+
+Enable installing a lua formatter
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `formatter.packages`
+
+A list of lua formatters to install
+
+**Type**: `list[package]`
+
+**Default**: `[ pkgs.stylua ]
