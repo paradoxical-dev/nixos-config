@@ -61,7 +61,7 @@ in
       };
       extraConfig = ''
         # source fzf script and colors
-        use ~/.config/nushell/fzf.nu
+        use ~/.config/nushell/fzf-binds.nu
         use ~/.config/nushell/fzf-colors.nu
 
         # had to move multi command aliases to function to avoid eager eval
