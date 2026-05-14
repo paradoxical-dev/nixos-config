@@ -17,10 +17,6 @@ in
   config = lib.mkIf cfg.enable {
     programs.fzf = {
       enable = true;
-      defaultOptions = [
-        "--prompt"
-        "'   '"
-      ];
     };
     # custom fzf scripts
     home.packages = [

@@ -60,8 +60,9 @@ in
         gd = "fzf-git-diff";
       };
       extraConfig = ''
-        # source fzf script
+        # source fzf script and colors
         use ~/.config/nushell/fzf.nu
+        use ~/.config/nushell/fzf-colors.nu
 
         # had to move multi command aliases to function to avoid eager eval
         def cleanup [] {
@@ -81,8 +82,9 @@ in
       ];
     };
 
-    # symlink fzf script
-    home.file.".config/nushell/fzf.nu".source = ./scripts/fzf.nu;
+    # symlink fzf scripts
+    home.file.".config/nushell/fzf-binds.nu".source = ./scripts/fzf.nu;
+    home.file.".config/nushell/fzf-colors.nu".source = ../cli/fzf/fzf-colors.nu;
 
     # carapace for command completion
     programs.carapace = {

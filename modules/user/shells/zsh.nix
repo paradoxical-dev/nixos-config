@@ -138,5 +138,8 @@ in
         eval "$(starship init zsh)"
       '';
     };
+
+    # symlink fzf scripts
+    home.file.".config/zsh/fzf-colors.sh".source = ../cli/fzf/fzf-colors.sh;
   };
 }
