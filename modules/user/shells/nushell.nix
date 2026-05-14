@@ -84,7 +84,7 @@ in
 
     # symlink fzf scripts
     home.file.".config/nushell/fzf-binds.nu".source = ./scripts/fzf.nu;
-    home.file.".config/nushell/fzf-colors.nu".source = ../cli/fzf/fzf-colors.nu;
+    home.file.".config/nushell/fzf-colors.nu".text = builtins.readFile ../cli/fzf/fzf-colors.nu;
 
     # carapace for command completion
     programs.carapace = {
