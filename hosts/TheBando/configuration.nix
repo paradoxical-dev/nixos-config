@@ -5,6 +5,15 @@
     users = [ "gitmoney" ];
     adminUsers = [ "gitmoney" ];
     kernel.type = "latest";
+    security = {
+      firewall = {
+        enable = true;
+        allowSSH = true;
+      };
+      fail2ban.enable = true;
+      unbound.enable = true;
+      hardening.enable = true;
+    };
     extra-documentation.enable = true;
     bluetooth.enable = true;
     printing.enable = true;
@@ -14,6 +23,9 @@
     };
     gnome.enable = true;
   };
+
+  # nix-mineral settings
+  nix-mineral.settings.entropy.jitterentropy = false; # disable jitterentropy (conflicts on this machine)
 
   # user settings
   users.users.gitmoney.description = "gitmoney";

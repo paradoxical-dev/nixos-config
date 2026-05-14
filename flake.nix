@@ -7,6 +7,8 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-mineral.url = "github:cynicsketch/nix-mineral/";
   };
 
   outputs =
