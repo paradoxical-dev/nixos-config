@@ -82,7 +82,7 @@ in
     };
 
     # symlink fzf script
-    home.file.".config/nushell/fzf.lua".source = ./scripts/fzf.nu;
+    home.file.".config/nushell/fzf.nu".source = ./scripts/fzf.nu;
 
     # carapace for command completion
     programs.carapace = {
