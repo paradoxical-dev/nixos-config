@@ -23,6 +23,10 @@ in
         completions.algorithm = "fuzzy";
         use_kitty_protocol = true;
       };
+      envFile.text = ''
+        $env.PROMPT_INDICATOR_VI_INSERT = "";
+        $env.PROMPT_INDICATOR_VI_NORMAL = "";
+      '';
       shellAliases = {
         # system
         update = ''nh os switch $"${config.userSettings.dotfilesDir}#(hostname)"'';
@@ -55,8 +59,11 @@ in
         gl = "fzf-git-log";
         gd = "fzf-git-diff";
       };
-      # had to move multi command aliases to function to avoid eager eval
       extraConfig = ''
+        # source fzf script
+        use ~/.config/nushell/fzf.nu
+
+        # had to move multi command aliases to function to avoid eager eval
         def cleanup [] {
           sudo nix-collect-garbage -d
           nix-collect-garbage -d
@@ -73,9 +80,20 @@ in
         query
       ];
     };
+
+    # symlink fzf script
+    home.file.".config/nushell/fzf.lua".source = ./scripts/fzf.nu;
+
+    # carapace for command completion
     programs.carapace = {
       enable = true;
       enableNushellIntegration = true;
     };
+
+    # extra deps
+    home.packages = with pkgs; [
+      nufmt
+      tree
+    ];
   };
 }
