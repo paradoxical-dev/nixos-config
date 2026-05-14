@@ -36,9 +36,17 @@
           enable = true;
           lsp.enable = true;
           formatter.enable = true;
-          extraPkgs = with pkgs.python3Packages; [ pandas ];
+          extraPkgs = with pkgs.python3Packages; [
+            pandas
+            pytest
+          ];
         };
         rust = {
+          enable = true;
+          lsp.enable = true;
+          formatter.enable = true;
+        };
+        lua = {
           enable = true;
           lsp.enable = true;
           formatter.enable = true;
