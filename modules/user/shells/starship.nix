@@ -24,12 +24,16 @@ in
           "[┌](fg:#999999)"
           "[ 󱜿 ](bg:purple fg:black)"
           "[](fg:purple bg:none)"
+          "$nix_shell"
           "$directory"
           "$git_branch"
           "$git_status\n"
           "[└](fg:#999999) "
           "$character"
         ];
+        nix_shell = {
+          format = "[](fg:yellow bg:none)[ $name ](bg:yellow fg:black)[](fg:yellow bg:none)";
+        };
         directory = {
           format = "[](fg:blue bg:none)[ $path ](bg:blue fg:black)[](fg:blue bg:none)";
         };
