@@ -20,6 +20,14 @@ in
           type = lib.types.listOf lib.types.package;
         };
       };
+      debugger = {
+        enable = lib.mkEnableOption "Enable python debugger";
+        packages = lib.mkOption {
+          default = with pkgs.python3Packages; [ debugpy ];
+          description = "Python debugger package";
+          type = lib.types.listOf lib.types.package;
+        };
+      };
       formatter = {
         enable = lib.mkEnableOption "Enable python formatter";
         packages = lib.mkOption {
@@ -37,7 +45,9 @@ in
   };
   config = lib.mkIf cfg.enable {
     home.packages = [
-      (pkgs.python3.withPackages (_: cfg.extraPkgs))
+      (pkgs.python3.withPackages (
+        _: cfg.extraPkgs ++ lib.optionals cfg.debugger.enable cfg.debugger.packages
+      ))
     ]
     ++ lib.optionals cfg.lsp.enable cfg.lsp.packages
     ++ lib.optionals cfg.formatter.enable cfg.formatter.packages;

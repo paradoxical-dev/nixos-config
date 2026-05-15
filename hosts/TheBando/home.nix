@@ -36,6 +36,7 @@
           enable = true;
           lsp.enable = true;
           formatter.enable = true;
+          debugger.enable = true;
           extraPkgs = with pkgs.python3Packages; [
             pandas
             pytest
