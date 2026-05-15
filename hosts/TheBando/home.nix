@@ -26,13 +26,8 @@
       gnome.enable = true;
       langs = {
         zeal.enable = true;
-        node = {
-          enable = true;
-          nodemon.enable = true;
-          lsp.enable = true;
-          formatter.enable = true;
-        };
         python = {
+          # we keep python for quick scripts
           enable = true;
           lsp.enable = true;
           formatter.enable = true;
@@ -42,12 +37,8 @@
             pytest
           ];
         };
-        rust = {
-          enable = true;
-          lsp.enable = true;
-          formatter.enable = true;
-        };
         lua = {
+          # lua enabled for neovim config dev
           enable = true;
           lsp.enable = true;
           formatter.enable = true;

@@ -4,6 +4,11 @@ Defines what languages to install on the system, along with language specific pa
 
 Also provides an option to install [Zeal](https://zealdocs.org/) for offline language documentation.
 
+> [!NOTE]
+> Most of the languages defined here are not needed since we can use devshells for developer tools.
+>
+> Some special cases may still come up (lua tools for neovim config, etc.), so the modules will still be provided.
+
 ## Options
 
 ### `langs.zeal.enable`
@@ -224,4 +229,4 @@ A list of lua formatters to install
 
 **Type**: `list[package]`
 
-**Default**: `[ pkgs.stylua ]
+**Default**: `[ pkgs.stylua ]`
