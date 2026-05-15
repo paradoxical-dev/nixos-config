@@ -64,12 +64,21 @@ const ctrl_t = {
 
 # Update the $env.config
 export-env {
-  if not ($env.__keybindings_loaded? | default false) {
-    $env.__keybindings_loaded = true
+  # NOTE: need to account for stringified booleans. Nix shell is weird
+  if ($env.__keybindings_loaded? | default "false") != "true" {
+    $env.__keybindings_loaded = "true"
     $env.config.keybindings = $env.config.keybindings | append [
       $alt_c
       $ctrl_r
       $ctrl_t
     ]
   }
+  # if not ($env.__keybindings_loaded? | default false) {
+  #   $env.__keybindings_loaded = true
+  #   $env.config.keybindings = $env.config.keybindings | append [
+  #     $alt_c
+  #     $ctrl_r
+  #     $ctrl_t
+  #   ]
+  # }
 }
