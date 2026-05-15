@@ -38,6 +38,9 @@ in
         # colors
         set-option -ga terminal-overrides ",xterm-256color:Tc"
 
+        # allow passthrough for image protocols
+        set -g allow-passthrough on
+
         # KEYBINDS #
 
         # splits
