@@ -35,6 +35,10 @@
           extraPkgs = with pkgs.python3Packages; [
             pandas
             pytest
+            ipykernel
+            metakernel
+            jupyter
+            notebook
           ];
         };
         lua = {
