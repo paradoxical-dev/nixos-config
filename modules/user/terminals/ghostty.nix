@@ -35,6 +35,7 @@ in
       font-family = "JetBrainsMono Nerd Font";
       font-family-italic = "Victor Mono";
       font-family-bold-italic = "Victor Mono";
+      adjust-cell-height = "+20%";
 
       theme = "${config.home.homeDirectory}/.config/ghostty/themes/current";
       custom-shader = "${config.home.homeDirectory}/.config/ghostty/shaders/cursor_warp.glsl";
