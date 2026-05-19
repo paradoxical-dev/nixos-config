@@ -33,7 +33,7 @@ List of desired editors to install
 
 ### `emacs`
 
-Emacs specific options
+Attribute set with Emacs specific options
 
 #### `mail`
 
@@ -43,7 +43,23 @@ Whether to enable mail capabilities in emacs.
 
 **Default**: `fale`
 
-`extraPkgs`
+#### `eaf.enable`
+
+Enable the [Emacs-Application-Framework](https://github.com/emacs-eaf/emacs-application-framework)
+
+**Type**: `bool`
+
+**Default**: `false`
+
+#### `eaf.apps`
+
+List of EAF apps to include with eaf
+
+**Type**: `list[pkg]`
+
+**Default**: `with pkgs.emacsPackages; [ eaf-browser ]`
+
+#### `extraPkgs`
 
 A list of emacs packages to be installed with the default emacs installation.
 

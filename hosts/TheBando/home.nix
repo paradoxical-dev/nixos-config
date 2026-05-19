@@ -4,6 +4,7 @@
   config = {
     userSettings = {
       dotfilesDir = "/home/gitmoney/.dotfiles";
+
       terminal = "ghostty";
       shells = [
         "zsh"
@@ -11,13 +12,17 @@
       ];
       starship.enable = true;
       cli = "extra";
+
       editors = [
         "neovim"
         "vscodium"
         "emacs"
       ];
       emacs.mail = true;
+      # emacs.eaf.enable = true;
+
       browser = "brave";
+
       engineering.enable = true;
       research = {
         enable = true;
@@ -25,7 +30,9 @@
       };
       obsidian.enable = true;
       webull.enable = true;
+
       gnome.enable = true;
+
       langs = {
         zeal.enable = true;
         python = {
