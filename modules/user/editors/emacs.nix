@@ -13,6 +13,11 @@ in
     userSettings.emacs = {
       enable = lib.mkEnableOption "Enable Emacs";
       mail = lib.mkEnableOption "Enable mail";
+      extraPkgs = lib.mkOptions {
+        default = [];
+        description = "Extra emacs packages to enable";
+        type = lib.types.listOf lib.types.package;
+      };
     };
   };
   config = lib.mkIf cfg.enable {
