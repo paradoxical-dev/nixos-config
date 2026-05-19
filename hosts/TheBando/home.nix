@@ -14,7 +14,9 @@
       editors = [
         "neovim"
         "vscodium"
+        "emacs"
       ];
+      emacs.mail = true;
       browser = "brave";
       engineering.enable = true;
       research = {

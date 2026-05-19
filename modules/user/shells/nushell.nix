@@ -24,8 +24,12 @@ in
         use_kitty_protocol = true;
       };
       envFile.text = ''
+        # FIX VI MODE #
         $env.PROMPT_INDICATOR_VI_INSERT = "";
         $env.PROMPT_INDICATOR_VI_NORMAL = "";
+
+        # PATH EXTENSIONS #
+        $env.PATH = ($env.PATH | prepend $"($env.HOME)/.config/emacs/bin"); # doom emacs commands
       '';
       shellAliases = {
         # system

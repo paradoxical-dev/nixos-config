@@ -90,6 +90,9 @@ in
       initContent = ''
         bindkey -v
 
+        # PATH EXTENSIONS #
+        export PATH="$HOME/.config/emacs/bin:$PATH"
+
         # FZF #
         eval "$(fzf --zsh)"
         source $HOME/.config/zsh/fzf-colors.sh
@@ -134,7 +137,7 @@ in
         export ZVM_KEYTIMEOUT=0
         export ZVM_VI_HIGHLIGHT_BACKGROUND=#45475b
 
-        # starship
+        # STARSHIP #
         eval "$(starship init zsh)"
       '';
     };
