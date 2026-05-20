@@ -42,8 +42,9 @@ in
         epkgs:
         with epkgs;
         [
-          vterm
-          pdf-tools
+          vterm # TODO: move to option?
+          pdf-tools # TODO: move to option?
+          treesit-grammars.with-all-grammars
         ]
         ++ lib.optionals cfg.mail [ mu4e ]
         ++ lib.optionals cfg.eaf.enable [
@@ -76,7 +77,32 @@ in
 
     # extra deps
     home.packages = with pkgs;
-    [ ispell ]
+    [
+      # spell checking / dictionary
+      ispell
+      aspell
+      aspellDicts.en
+      aspellDicts.en-computers
+      aspellDicts.en-science
+      wordnet
+
+      # org mode
+      sqlite
+      graphviz
+
+      # images
+      imagemagick
+      ghostscript
+      vips
+
+      # window management
+      wmctrl
+
+      # shell packages
+      # TODO: move to langs module?
+      shellcheck
+      shfmt
+    ]
     ++ lib.optionals cfg.eaf.enable [
       git
       nodejs
