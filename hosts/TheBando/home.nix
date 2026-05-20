@@ -57,6 +57,7 @@
 
       langs = {
         zeal.enable = true;
+        direnv.enable = true;
         python = {
           # we keep python for quick scripts
           enable = true;

@@ -21,6 +21,16 @@ Enables the installation of Zeal
 
 ---
 
+### `langs.direnv.enable`
+
+Enables the `direnv` program
+
+**Type**: `bool`
+
+**Default**: `false`
+
+---
+
 ### `langs.python`
 
 An attribute set to describe installing python on the system
