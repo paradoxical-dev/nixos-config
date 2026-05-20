@@ -31,7 +31,7 @@
   users.users.gitmoney.description = "gitmoney";
   home-manager.users.gitmoney.userSettings = {
     name = "gitmoney";
-    email = "jaredonnell21@gmail.com";
+    userEmail = "jaredonnell21@gmail.com";
   };
 
   # Allow unfree packages

@@ -5,6 +5,9 @@
     userSettings = {
       dotfilesDir = "/home/gitmoney/.dotfiles";
 
+      gpg.enable = true;
+      gpg.pinentry = "all";
+
       terminal = "ghostty";
       shells = [
         "zsh"
@@ -22,6 +25,25 @@
       # emacs.eaf.enable = true;
 
       browser = "brave";
+
+      email = {
+        enable = true;
+        accounts = {
+          personal = {
+            address = "jaredonnell21@gmail.com";
+            realName = "Jared Donnell";
+            imap.host = "imap.gmail.com";
+            smtp.host = "smtp.gmail.com";
+            primary = true;
+            mbsync.patterns = [
+              "INBOX"
+              "[Gmail]/Sent Mail"
+              "[Gmail]/Drafts"
+              "[Gmail]/Trash"
+            ];
+          };
+        };
+      };
 
       engineering.enable = true;
       research = {

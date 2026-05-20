@@ -29,7 +29,11 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
-    programs.mu.enable = lib.mkIf cfg.mail true;
+    # conditionally enable mail pkgs
+    # programs.mbsync.enable = lib.mkIf cfg.mail true;
+    # programs.msmtp.enable = lib.mkIf cfg.mail true;
+    # programs.mu.enable = lib.mkIf cfg.mail true;
+
     # handle emacs config outside of home-manager
     programs.emacs = {
       enable = true;
@@ -39,6 +43,7 @@ in
         with epkgs;
         [
           vterm
+          pdf-tools
         ]
         ++ lib.optionals cfg.mail [ mu4e ]
         ++ lib.optionals cfg.eaf.enable [

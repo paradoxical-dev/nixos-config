@@ -10,7 +10,7 @@
         description = "User full name";
         type = lib.types.str;
       };
-      email = lib.mkOption {
+      userEmail = lib.mkOption {
         default = "";
         description = "User email";
         type = lib.types.str;

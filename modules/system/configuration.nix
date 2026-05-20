@@ -9,6 +9,7 @@
     neovim
     man-pages
     man-pages-posix
+    gnupg
   ];
 
   # zones / locale
