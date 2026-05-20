@@ -67,6 +67,19 @@
   };
 
   # bootloader (grub)
+  boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
+    pname = "sleek-grub-theme";
+    version = "unstable";
+    src = pkgs.fetchFromGitHub {
+      owner = "sandesh236";
+      repo = "sleek--themes";
+      rev = "master";
+      hash = "sha256-E3DSOZlszBRy2F172L7ZSSsDlkk3n9jGXl4hRWv2WF8=";
+    };
+    installPhase = ''
+      cp -r "$src/Sleek theme-dark/sleek" $out
+    '';
+  };
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = false;
@@ -85,5 +98,13 @@
   ];
   boot.initrd.systemd.enable = true;
   boot.initrd.verbose = false;
-  boot.plymouth.enable = true;
+
+  # boot animation
+  boot.plymouth = {
+    enable = true;
+    theme = "cross_hud";
+    themePackages = [
+      pkgs.adi1090x-plymouth-themes
+    ];
+  };
 }
