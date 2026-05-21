@@ -143,6 +143,6 @@ in
     };
 
     # symlink fzf scripts
-    home.file.".config/zsh/fzf-colors.sh".text = builtins.readFile ../cli/fzf/fzf-colors.sh;
+    # home.file.".config/zsh/fzf-colors.sh".text = builtins.readFile ../cli/fzf/fzf-colors.sh;
   };
 }
