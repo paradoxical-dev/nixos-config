@@ -13,6 +13,7 @@ in
     userSettings.emacs = {
       enable = lib.mkEnableOption "Enable Emacs";
       mail = lib.mkEnableOption "Enable mail";
+      daemon = lib.mkEnableOption "Enable Emacs daemon service";
       eaf = {
         enable = lib.mkEnableOption "Enable EAF";
         apps = lib.mkOption {
@@ -22,22 +23,18 @@ in
         };
       };
       extraPkgs = lib.mkOption {
-        default = [];
+        default = [ ];
         description = "Extra emacs packages to enable";
         type = lib.types.listOf lib.types.package;
       };
     };
   };
   config = lib.mkIf cfg.enable {
-    # conditionally enable mail pkgs
-    # programs.mbsync.enable = lib.mkIf cfg.mail true;
-    # programs.msmtp.enable = lib.mkIf cfg.mail true;
-    # programs.mu.enable = lib.mkIf cfg.mail true;
-
-    # handle emacs config outside of home-manager
+    # INFO: handle emacs config outside of home-manager
     programs.emacs = {
       enable = true;
-      package = if cfg.eaf.enable then pkgs.emacs-gtk else pkgs.emacs;
+      # package = if cfg.eaf.enable then pkgs.emacs-gtk else pkgs.emacs;
+      package = pkgs.emacs; # TODO: make option?
       extraPackages = (
         epkgs:
         with epkgs;
@@ -56,7 +53,8 @@ in
     # eaf python deps
     userSettings.langs.python.enable = lib.mkIf cfg.eaf.enable true;
     userSettings.langs.python.extraPkgs = lib.optionals cfg.eaf.enable (
-      with pkgs.python3Packages; [
+      with pkgs.python3Packages;
+      [
         pyqt6
         pyqt6-sip
         pyqt6-webengine
@@ -76,45 +74,53 @@ in
     );
 
     # extra deps
-    home.packages = with pkgs;
-    [
-      # spell checking / dictionary
-      ispell
-      aspell
-      aspellDicts.en
-      aspellDicts.en-computers
-      aspellDicts.en-science
-      wordnet
+    home.packages =
+      with pkgs;
+      [
+        # spell checking / dictionary
+        ispell
+        aspell
+        aspellDicts.en
+        aspellDicts.en-computers
+        aspellDicts.en-science
+        wordnet
 
-      # org mode
-      sqlite
-      graphviz
+        # org mode
+        sqlite
+        graphviz
 
-      # images
-      imagemagick
-      ghostscript
-      vips
+        # images
+        imagemagick
+        ghostscript
+        vips
 
-      # window management
-      wmctrl
+        # window management
+        wmctrl
 
-      # shell packages
-      # TODO: move to langs module?
-      shellcheck
-      shfmt
-    ]
-    ++ lib.optionals cfg.eaf.enable [
-      git
-      nodejs
-      wmctrl
-      xdotool
-      aria2
-    ];
+        # shell packages
+        # TODO: move to langs module?
+        shellcheck
+        shfmt
+      ]
+      ++ lib.optionals cfg.eaf.enable [
+        git
+        nodejs
+        wmctrl
+        xdotool
+        aria2
+      ];
 
     # conditionally set QT env var for EAF.
     # See https://github.com/emacs-eaf/emacs-application-framework/wiki/NixOS
     home.sessionVariables = lib.mkIf cfg.eaf.enable {
       QT_QPA_PLATFORM_PLUGIN_PATH = "${pkgs.qt6.qtbase.outPath}/lib/qt-6/plugins";
+    };
+
+    services.emacs = lib.mkIf cfg.daemon {
+      enable = true;
+      package = config.programs.emacs.finalPackage;
+      client.enable = true;
+      startWithUserSession = true;
     };
   };
 }

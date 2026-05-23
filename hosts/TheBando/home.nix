@@ -22,6 +22,7 @@
         "emacs"
       ];
       emacs.mail = true;
+      emacs.daemon = true;
       # emacs.eaf.enable = true;
 
       browser = "brave";
