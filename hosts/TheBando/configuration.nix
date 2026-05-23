@@ -4,6 +4,7 @@
   systemSettings = {
     users = [ "gitmoney" ];
     adminUsers = [ "gitmoney" ];
+
     kernel.type = "latest";
     security = {
       firewall = {
@@ -14,14 +15,19 @@
       unbound.enable = true;
       hardening.enable = true;
     };
+
     extra-documentation.enable = true;
+
     bluetooth.enable = true;
     printing.enable = true;
+
     fonts = {
       std = with pkgs; [ victor-mono ];
       nerd = with pkgs; [ nerd-fonts.jetbrains-mono ];
     };
-    gnome.enable = true;
+
+    # gnome.enable = true;
+    niri.enable = true;
   };
 
   # nix-mineral settings
