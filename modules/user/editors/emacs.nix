@@ -22,6 +22,11 @@ in
           type = lib.types.listOf lib.types.package;
         };
       };
+      package = lib.mkOption {
+        default = pkgs.emacs;
+        description = "The emacs package to install";
+        type = lib.types.package;
+      };
       extraPkgs = lib.mkOption {
         default = [ ];
         description = "Extra emacs packages to enable";
@@ -33,8 +38,8 @@ in
     # INFO: handle emacs config outside of home-manager
     programs.emacs = {
       enable = true;
-      # package = if cfg.eaf.enable then pkgs.emacs-gtk else pkgs.emacs;
-      package = pkgs.emacs; # TODO: make option?
+      package = if cfg.eaf.enable then pkgs.emacs-gtk else cfg.package;
+      # package = pkgs.emacs; # TODO: make option?
       extraPackages = (
         epkgs:
         with epkgs;
