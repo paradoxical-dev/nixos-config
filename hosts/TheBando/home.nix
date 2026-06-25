@@ -22,7 +22,7 @@
         "emacs"
       ];
       emacs.mail = true;
-      emacs.daemon = true;
+      # emacs.daemon = true;
       # emacs.eaf.enable = true;
 
       browser = "brave";
@@ -49,7 +49,7 @@
       engineering.enable = true;
       research = {
         enable = true;
-        texlivePackages = [ pkgs.texliveSmall ];
+        texlivePackages = [ pkgs.texliveMedium ];
       };
       obsidian.enable = true;
       webull.enable = true;
