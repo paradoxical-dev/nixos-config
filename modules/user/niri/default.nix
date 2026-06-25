@@ -20,7 +20,9 @@ let
       "call"
     ]
     ++ (pkgs.lib.splitString " " cmd);
+
   window-radius = 20.0;
+  cursor-theme = "Bibata-Modern-Ice";
 in
 {
   imports = [
@@ -37,6 +39,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [
       pkgs.xwayland-satellite
+      pkgs.nautilus
     ]
     ++ lib.optionals cfg.noctalia.enable [ noctalica-binary ];
 
@@ -46,18 +49,18 @@ in
 
     home.pointerCursor = {
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      name = cursor-theme;
       size = 24;
       gtk.enable = true;
     };
-    
+
     # programs.niri.enable = true;
     programs.niri.settings = {
       prefer-no-csd = true;
       environment = {
         NIXOS_OZONE_WL = "1";
-        XCURSOR_THEME = "Bibata-Modern-Ice";
-        XCURSOR_SIZE = "24";
+        XCURSOR_THEME = cursor-theme;
+        XCURSOR_SIZE = "28";
       };
       spawn-at-startup = lib.optionals cfg.noctalia.enable [
         {
@@ -68,12 +71,13 @@ in
       ];
 
       cursor = {
-        theme = "Bibata-Modern-Ice";
+        theme = cursor-theme;
         size = 24;
       };
 
       window-rules = [
-        {  # rounded corners
+        {
+          # rounded corners
           geometry-corner-radius = {
             top-left = window-radius;
             top-right = window-radius;
@@ -94,6 +98,14 @@ in
       binds = with config.lib.niri.actions; {
         # apps
         "Mod+Return".action = spawn "${pkgs.ghostty}/bin/ghostty";
+        # "Mod+Return".action.spawn = [
+        #   "emacsclient"
+        #   "-s"
+        #   "vterm"
+        #   "-c"
+        #   "-e"
+        #   "(my/new-frame-with-vterm)"
+        # ];
 
         # workspace/window nav
         "Mod+O".action = toggle-overview;
