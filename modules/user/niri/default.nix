@@ -60,7 +60,7 @@ in
       environment = {
         NIXOS_OZONE_WL = "1";
         XCURSOR_THEME = cursor-theme;
-        XCURSOR_SIZE = "28";
+        XCURSOR_SIZE = "24";
       };
       spawn-at-startup = lib.optionals cfg.noctalia.enable [
         {
@@ -141,10 +141,14 @@ in
 
         # noctalia
         "Mod+Space".action.spawn = noctalia-cmd "launcher toggle";
-        "Mod+Escape".action.spawn = noctalia-cmd "lockscreen lock";
+        "Mod+Escape".action.spawn = noctalia-cmd "lockScreen lock";
+        "Mod+Comma".action.spawn = noctalia-cmd "settings toggle";
+        "Mod+Shift+Space".action.spawn = noctalia-cmd "controlCenter toggle";
         "XF86AudioLowerVolume".action.spawn = noctalia-cmd "volume decrease";
         "XF86AudioRaiseVolume".action.spawn = noctalia-cmd "volume increase";
         "XF86AudioMute".action.spawn = noctalia-cmd "volume muteOutput";
+        "XF86MonBrightnessUp".action.spawn = noctalia-cmd "brightness increase";
+        "XF86MonBrightnessDown".action.spawn = noctalia-cmd "brightness decrease";
       };
 
       layout = {
