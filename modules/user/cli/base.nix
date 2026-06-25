@@ -23,6 +23,7 @@ in
       brightnessctl
       eza
       fd
+      ffmpeg
       file
       hwinfo
       jiq
