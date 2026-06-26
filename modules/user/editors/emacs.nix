@@ -39,7 +39,6 @@ in
     programs.emacs = {
       enable = true;
       package = if cfg.eaf.enable then pkgs.emacs-gtk else cfg.package;
-      # package = pkgs.emacs; # TODO: make option?
       extraPackages = (
         epkgs:
         with epkgs;
@@ -127,5 +126,22 @@ in
       client.enable = true;
       startWithUserSession = true;
     };
+
+    # XXX: TESTING MULTI DAEMON
+    # systemd.user.services.emacs-vterm = {
+    #   Unit = {
+    #     Description = "Emacs vterm daemon";
+    #     After = [ "graphical-session-pre.target" ];
+    #     PartOf = [ "graphical-session.target" ];
+    #   };
+    #   Service = {
+    #     ExecStart = "${pkgs.bash}/bin/bash -l -c '${config.userSettings.emacs.package}/bin/emacs --fg-daemon=vterm'";
+    #     ExecStop = "${config.userSettings.emacs.package}/bin/emacsclient -s vterm --eval '(kill-emacs)'";
+    #     Restart = "on-failure";
+    #     SuccessExitStatus = 15;
+    #     Type = "notify";
+    #   };
+    #   Install.WantedBy = [ "graphical-session.target" ];
+    # };
   };
 }
