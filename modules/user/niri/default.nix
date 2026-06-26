@@ -11,15 +11,15 @@
 
 let
   cfg = config.userSettings.niri;
-  noctalica-binary = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  noctalia-cmd =
-    cmd:
-    [
-      "noctalia-shell"
-      "ipc"
-      "call"
-    ]
-    ++ (pkgs.lib.splitString " " cmd);
+  noctalia-binary = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  # noctalia-cmd =
+  #   cmd:
+  #   [
+  #     "noctalia-shell"
+  #     "ipc"
+  #     "call"
+  #   ]
+  #   ++ (pkgs.lib.splitString " " cmd);
 
   window-radius = 20.0;
   cursor-theme = "Bibata-Modern-Ice";
@@ -41,9 +41,9 @@ in
       pkgs.xwayland-satellite
       pkgs.nautilus
     ]
-    ++ lib.optionals cfg.noctalia.enable [ noctalica-binary ];
+    ++ lib.optionals cfg.noctalia.enable [ noctalia-binary ];
 
-    programs.noctalia-shell = lib.mkIf cfg.noctalia.enable {
+    programs.noctalia = lib.mkIf cfg.noctalia.enable {
       enable = true;
     };
 
@@ -65,7 +65,7 @@ in
       spawn-at-startup = lib.optionals cfg.noctalia.enable [
         {
           command = [
-            "${noctalica-binary}/bin/noctalia-shell"
+            "${noctalia-binary}/bin/noctalia"
           ];
         }
       ];
@@ -140,15 +140,15 @@ in
         "Mod+Shift+Equal".action = set-window-height "+5%";
 
         # noctalia
-        "Mod+Space".action.spawn = noctalia-cmd "launcher toggle";
-        "Mod+Escape".action.spawn = noctalia-cmd "lockScreen lock";
-        "Mod+Comma".action.spawn = noctalia-cmd "settings toggle";
-        "Mod+Shift+Space".action.spawn = noctalia-cmd "controlCenter toggle";
-        "XF86AudioLowerVolume".action.spawn = noctalia-cmd "volume decrease";
-        "XF86AudioRaiseVolume".action.spawn = noctalia-cmd "volume increase";
-        "XF86AudioMute".action.spawn = noctalia-cmd "volume muteOutput";
-        "XF86MonBrightnessUp".action.spawn = noctalia-cmd "brightness increase";
-        "XF86MonBrightnessDown".action.spawn = noctalia-cmd "brightness decrease";
+        "Mod+Space".action.spawn-sh = "noctalia msg panel-toggle launcher";
+        "Mod+Escape".action.spawn-sh = "noctalia msg session lock";
+        "Mod+Comma".action.spawn-sh = "noctalia msg settings-toggle";
+        "Mod+Shift+Space".action.spawn-sh = "noctalia msg panel-toggle control-center";
+        "XF86AudioLowerVolume".action.spawn-sh = "noctalia msg volume-down";
+        "XF86AudioRaiseVolume".action.spawn-sh = "noctalia msg volume-up";
+        "XF86AudioMute".action.spawn-sh = "noctalia msg volume-mute";
+        "XF86MonBrightnessUp".action.spawn-sh = "noctalia msg brightness-up";
+        "XF86MonBrightnessDown".action.spawn-sh = "noctalia msg brightness-down";
       };
 
       layout = {

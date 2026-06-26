@@ -69,6 +69,10 @@
     trusted-users = [ "@wheel" ];
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "webull-desktop-9.3.0"
+  ];
+
   # bootloader (grub)
   boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
     pname = "sleek-grub-theme";
@@ -103,6 +107,7 @@
   boot.initrd.verbose = false;
 
   # boot animation
+  # TODO: make this a separate module?
   boot.plymouth = {
     enable = true;
     theme = "cross_hud";

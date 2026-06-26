@@ -25,6 +25,26 @@
     }:
 
     let
+      # pkgs = import nixpkgs {
+      #   config = {
+      #     allowUnfree = true;
+      #     allowUnfreePredicate = (_: true);
+      #     permittedInsecurePackages = [
+      #       # NOTE: any packages listed here will still need to be enabled via their module.
+      #       # Therefore, this will not effect ur system unless you enable it.
+      #       "webull-desktop-9.3.0"
+      #     ];
+      #   };
+      #   overlays = [ ];
+      # };
+
+      # pkgs-stable = import inputs.nixpkgs-stable {
+      #   config = {
+      #     allowUnfree = true;
+      #     allowUnfreePredicate = (_: true);
+      #   };
+      # };
+
       lib = nixpkgs.lib;
       hosts = builtins.filter (x: x != null && x != "TEMPLATE") (
         lib.mapAttrsToList (k: v: if (v == "directory") then k else null) (builtins.readDir ./hosts)
@@ -50,11 +70,17 @@
                 home-manager.useUserPackages = true;
                 home-manager.extraSpecialArgs = {
                   inherit inputs;
+                  # inherit pkgs;
+                  # inherit pkgs-stable;
                 };
               }
             ];
 
-            specialArgs = { inherit inputs; };
+            specialArgs = {
+              inherit inputs;
+              # inherit pkgs;
+              # inherit pkgs-stable;
+            };
           };
         }) hosts
       );
