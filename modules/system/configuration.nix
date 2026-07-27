@@ -69,6 +69,8 @@
     trusted-users = [ "@wheel" ];
   };
 
+  # NOTE: packages listed here will NOT be installed on ur system unless
+  # the corresponding module is also enabled in ur configuration
   nixpkgs.config.permittedInsecurePackages = [
     "webull-desktop-9.3.0"
   ];

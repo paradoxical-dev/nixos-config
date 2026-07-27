@@ -22,12 +22,19 @@
     printing.enable = true;
 
     fonts = {
-      std = with pkgs; [ victor-mono roboto-mono ];
-      nerd = with pkgs; [ nerd-fonts.jetbrains-mono nerd-fonts.fira-code ];
+      std = with pkgs; [
+        victor-mono
+        roboto-mono
+      ];
+      nerd = with pkgs; [
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.fira-code
+      ];
     };
 
     # gnome.enable = true;
     niri.enable = true;
+    plasma.enable = true;
   };
 
   # nix-mineral settings

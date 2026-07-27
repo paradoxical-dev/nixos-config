@@ -92,6 +92,9 @@ Enables the use of nix-mineral
 
 The preset to use for nix-mineral. See [here](https://github.com/cynicsketch/nix-mineral) for more information
 
+>[!NOTE]
+>Further nix-mineral options may be modified *outside* of the `systemSettings` option in your configuration.nix. See my [configuration file](../../../hosts/TheBando/configuration.nix) for en example
+
 **Type**: `enum`
 
 **Default**: `"compatibility"`

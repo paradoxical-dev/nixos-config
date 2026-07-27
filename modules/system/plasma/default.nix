@@ -9,11 +9,11 @@
 # Should be paired with respective user module for best experience
 
 let
-  cfg = config.systemSettings.kde;
+  cfg = config.systemSettings.plasma;
 in
 {
   options = {
-    systemSettings.kde = {
+    systemSettings.plasma = {
       enable = lib.mkEnableOption "Enable KDE Plasma";
     };
   };
@@ -34,6 +34,12 @@ in
       konsole
       kate
       ktexteditor
+    ];
+
+    # extensions
+    environment.systemPackages =  with pkgs; [
+      plasma-panel-colorizer
+      plasma-panel-spacer-extended
     ];
   };
 }
