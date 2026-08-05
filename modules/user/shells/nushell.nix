@@ -81,7 +81,7 @@ in
       '';
       plugins = with pkgs.nushellPlugins; [
         formats
-        polars
+        # polars     # BUG: polars package not compiling w latest rebuild
         query
       ];
     };
