@@ -7,6 +7,7 @@
 
     kernel.type = "latest";
     security = {
+      sshd.enable = true;
       firewall = {
         enable = true;
         allowSSH = true;
@@ -33,7 +34,7 @@
     };
 
     # gnome.enable = true;
-    niri.enable = true;
+    # niri.enable = true;
     plasma.enable = true;
   };
 

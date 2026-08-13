@@ -55,8 +55,8 @@
       webull.enable = true;
 
       # gnome.enable = true;
-      niri.enable = true;
-      niri.noctalia.enable = true;
+      # niri.enable = true;
+      # niri.noctalia.enable = true;
 
       langs = {
         zeal.enable = true;
