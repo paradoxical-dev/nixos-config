@@ -36,6 +36,7 @@ in
       ktexteditor
     ];
 
+    # TODO: move to user module?
     # extensions
     environment.systemPackages =  with pkgs; [
       plasma-panel-colorizer
