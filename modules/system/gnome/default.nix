@@ -21,9 +21,26 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
+    # INFO: open-bar has no support for GNOME 50. Need to use an overlay
+    nixpkgs.overlays = [
+      (final: prev: {
+        gnomeExtensions = prev.gnomeExtensions // {
+          open-bar = prev.gnomeExtensions.open-bar.overrideAttrs (oldAttrs: {
+            version = "gnome-50";
+            src = prev.fetchFromGitHub {
+              owner = "SMARTYFRR";
+              repo = "openbar";
+              rev = "gnome-50";
+              hash = "sha256-Xaq9UnmQ3PVi1EcOn/JAPnAR/kQfSqafQLw/DRQUPN8=";
+            };
+            sourceRoot = "source/openbar@neuromorph";
+          });
+        };
+      })
+    ];
+
     services.xserver.enable = true;
     services.displayManager.gdm.enable = true;
-    # services.displayManager.gdm.wayland = true;
     services.desktopManager.gnome.enable = true;
     services.xserver.xkb = {
       layout = "us";
