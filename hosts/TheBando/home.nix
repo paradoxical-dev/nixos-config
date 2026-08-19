@@ -29,6 +29,7 @@
 
       email = {
         enable = true;
+        clients = with pkgs; [ thunderbird ];
         accounts = {
           personal = {
             address = "jaredonnell21@gmail.com";
