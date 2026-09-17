@@ -13,9 +13,9 @@
         allowSSH = true;
       };
       fail2ban.enable = true;
-      unbound.enable = true;
-      captiveBrowser.enable = true;
-      captiveBrowser.interface = "wlp0s20f3";
+      # unbound.enable = true;
+      # captiveBrowser.enable = true;
+      # captiveBrowser.interface = "wlp0s20f3";
       hardening.enable = true;
     };
 

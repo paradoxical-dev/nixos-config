@@ -16,7 +16,7 @@ in
     userSettings.email = {
       enable = lib.mkEnableOption "Enable email on the host";
       clients = lib.mkOption {
-        default = null;
+        default = [ ];
         description = "Email client to install on the system";
         type = lib.types.listOf lib.types.package;
       };

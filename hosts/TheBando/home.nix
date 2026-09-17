@@ -18,10 +18,10 @@
 
       editors = [
         "neovim"
-        "vscodium"
-        "emacs"
+        # "vscodium"
+        # "emacs"
       ];
-      emacs.mail = true;
+      # emacs.mail = true;
       # emacs.daemon = true;
       # emacs.eaf.enable = true;
 
@@ -29,7 +29,7 @@
 
       email = {
         enable = true;
-        clients = with pkgs; [ thunderbird ];
+        # clients = with pkgs; [ thunderbird ];
         accounts = {
           personal = {
             address = "jaredonnell21@gmail.com";
