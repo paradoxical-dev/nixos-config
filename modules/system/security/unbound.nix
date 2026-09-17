@@ -2,11 +2,22 @@
 
 let
   cfg = config.systemSettings.security.unbound;
+  captiveBrowser = config.systemSettings.security.captiveBrowser;
 in
 {
   options = {
     systemSettings.security.unbound = {
       enable = lib.mkEnableOption "Enable unbound";
+    };
+    # NOTE: allows for easier interaction with captive protals on public wifi
+    # for more information see https://mynixos.com/nixpkgs/package/captive-browser
+    systemSettings.security.captiveBrowser = {
+      enable = lib.mkEnableOption "Enable captive browser";
+      interface = lib.mkOption {
+        default = "wlp3s0";
+        description = "Captive browser interface. (e.g. wlp3s0)";
+        type = lib.types.str;
+      };
     };
   };
   config = lib.mkIf cfg.enable {
@@ -42,6 +53,11 @@ in
       enable = true;
       useLocalResolver = true;
       dnsSingleRequest = true;
+    };
+
+    programs.captive-browser = lib.mkIf captiveBrowser.enable {
+      enable = true;
+      interface = captiveBrowser.interface;
     };
   };
 }
