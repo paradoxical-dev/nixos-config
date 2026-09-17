@@ -8,7 +8,7 @@
       gpg.enable = true;
       gpg.pinentry = "all";
 
-      terminal = "ghostty";
+      terminal = "kitty";
       shells = [
         "zsh"
         "nushell"

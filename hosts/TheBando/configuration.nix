@@ -14,6 +14,7 @@
       };
       fail2ban.enable = true;
       # unbound.enable = true;
+      # TODO: untangle from unbound module
       # captiveBrowser.enable = true;
       # captiveBrowser.interface = "wlp0s20f3";
       hardening.enable = true;
