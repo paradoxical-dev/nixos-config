@@ -49,9 +49,15 @@
   networking.networkmanager.enable = true;
 
   # limit journald
-  services.journald.extraConfig = "SystemMaxUse=50M\nSystemMaxFiles=5";
-  services.journald.rateLimitBurst = 500;
-  services.journald.rateLimitInterval = "30s";
+  services.journald.settings.Journal = {
+    SystemMaxUse = "50M";
+    SystemMaxFiles = "5";
+    RateLimitBurst = 500;
+    RateLimitInterval = "30s";
+  };
+  # services.journald.extraConfig = "SystemMaxUse=50M\nSystemMaxFiles=5";
+  # services.journald.rateLimitBurst = 500;
+  # services.journald.rateLimitInterval = "30s";
 
   # binary caches
   nix.settings = {

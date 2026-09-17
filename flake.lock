@@ -39,11 +39,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786630952,
-        "narHash": "sha256-a952+jEQ1I6sMd6yzi2GIsO/EFNtEFvzwbJ+oOG9Cg0=",
+        "lastModified": 1789482455,
+        "narHash": "sha256-pD3qVlQ4mUCFoTWrYtxecpSitQMsgJvJIN0FUIDZoEU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2d1bac51b2513914ace47797765c3265164de78e",
+        "rev": "efa3ccb4c3cc90d832eab232976379058fa75aa3",
         "type": "github"
       },
       "original": {
@@ -138,11 +138,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1786319227,
-        "narHash": "sha256-UAjuCgxqVpO6ki1kmWTPwu3iM3VXqzTCRXDzMZKuIVw=",
+        "lastModified": 1789361465,
+        "narHash": "sha256-heNtKBugtE7E7godTz23OlIMgj4eRXhy7q+15tnThkM=",
         "owner": "cynicsketch",
         "repo": "nix-mineral",
-        "rev": "b1c7e28253cee32341ce8b21ebcd1ca511bd3bd7",
+        "rev": "b7cee65733e228efad825eb5c7d648fbf669c59b",
         "type": "github"
       },
       "original": {
@@ -215,11 +215,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1786599213,
-        "narHash": "sha256-yjGG65gA1jORt0hWxjzrnw3AYkIn8EWolp8vezwXZ3I=",
-        "rev": "0e251e24a4f24e036a084b6b4b2d2491af4167f4",
+        "lastModified": 1789546076,
+        "narHash": "sha256-vWkSk5bbfTqdtMoSgD9FshACO8JCvXTFi+3cqEp0mH0=",
+        "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1053317.0e251e24a4f2/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074753.b1b875982b17/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -234,11 +234,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786637729,
-        "narHash": "sha256-aaVIpnYaLEtf09pXKEiem1/ItFWpU1F6549YivqTYqg=",
+        "lastModified": 1789606974,
+        "narHash": "sha256-faBg+Z+r/M3ImNkv/bAnQ6ByP8E6sLsZWRFOkD9guEo=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "9b88e86b115cf675d5d2ac0a70f11b4ac96c1604",
+        "rev": "616c2bc646c3320aa9e0fc7c55abd71a5bbbd15c",
         "type": "github"
       },
       "original": {
