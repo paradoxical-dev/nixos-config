@@ -55,7 +55,8 @@
       obsidian.enable = true;
       webull.enable = true;
 
-      gnome.enable = true;
+      hyprland.enable = true;
+      # gnome.enable = true;
       # niri.enable = true;
       # niri.noctalia.enable = true;
       # plasma.enable = true;

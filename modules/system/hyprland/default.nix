@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -9,17 +10,22 @@ let
   cfg = config.systemSettings.hyprland;
 in
 {
+  imports = [ inputs.ambxst.nixosModules.default ];
+
   options = {
     systemSettings.hyprland = {
       enable = lib.mkEnableOption "Enable Hyprland Desktop";
+      ambxst.enable = lib.mkEnableOption "Enable the Ambxst shell";
     };
   };
 
   config = lib.mkIf cfg.enable {
     programs.hyprland = {
       enable = true;
+      withUWSM = true;
       xwayland.enable = true;
     };
+    programs.ambxst.enable = cfg.ambxst.enable;
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";

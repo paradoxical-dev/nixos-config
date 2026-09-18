@@ -13,10 +13,6 @@
         allowSSH = true;
       };
       fail2ban.enable = true;
-      # unbound.enable = true;
-      # TODO: untangle from unbound module
-      # captiveBrowser.enable = true;
-      # captiveBrowser.interface = "wlp0s20f3";
       hardening.enable = true;
     };
 
@@ -36,7 +32,9 @@
       ];
     };
 
-    gnome.enable = true;
+    hyprland.enable = true;
+    hyprland.ambxst.enable = true;
+    # gnome.enable = true;
     # niri.enable = true;
     # plasma.enable = true;
   };

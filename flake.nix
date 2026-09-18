@@ -17,6 +17,9 @@
 
     plasma-manager.url = "github:nix-community/plasma-manager";
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    ambxst.url = "github:Axenide/Ambxst";
+    ambxst.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
