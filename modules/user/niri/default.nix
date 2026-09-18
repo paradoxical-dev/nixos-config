@@ -12,14 +12,6 @@
 let
   cfg = config.userSettings.niri;
   noctalia-binary = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  # noctalia-cmd =
-  #   cmd:
-  #   [
-  #     "noctalia-shell"
-  #     "ipc"
-  #     "call"
-  #   ]
-  #   ++ (pkgs.lib.splitString " " cmd);
 
   window-radius = 20.0;
   cursor-theme = "Bibata-Modern-Ice";
