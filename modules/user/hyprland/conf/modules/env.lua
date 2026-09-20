@@ -6,3 +6,6 @@
 
 -----Wayland
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+
+-----Plasma apps
+hl.env("XDG_MENU_PREFIX", "plasma-")

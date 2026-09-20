@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -14,8 +15,14 @@ in
   options = {
     userSettings.hyprland = {
       enable = lib.mkEnableOption "Enable Hyprland";
+      dms.enable = lib.mkEnableOption "Enable the Dank Material shell";
     };
   };
+
+  imports = [
+    inputs.dms.homeModules.dank-material-shell
+    inputs.dms-plugin-registry.nixosModules.default
+  ];
 
   config = lib.mkIf cfg.enable {
     home.pointerCursor = {
@@ -25,6 +32,16 @@ in
       size = 24;
       gtk.enable = true;
     };
+
+    programs.dank-material-shell = lib.mkIf cfg.dms.enable {
+      enable = true;
+      systemd = {
+        enable = true;
+        restartIfChanged = true;
+      };
+      plugins = { };
+    };
+    # services.dms.enable = cfg.dms.enable;
 
     xdg.configFile."hypr/hyprland.lua".source =
       config.lib.file.mkOutOfStoreSymlink "${hyprDots}/hyprland.lua";

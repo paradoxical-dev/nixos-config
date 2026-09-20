@@ -44,6 +44,8 @@ in
 
     services.gnome.gnome-keyring.enable = true;
 
+    services.accounts-daemon.enable = true;
+
     services.displayManager.sddm.enable = true;
     services.displayManager.sddm.wayland.enable = true;
 
@@ -56,6 +58,7 @@ in
       playerctl
       brightnessctl
       pavucontrol
+      power-profiles-daemon
     ];
   };
 }
