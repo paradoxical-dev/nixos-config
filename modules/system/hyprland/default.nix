@@ -46,6 +46,9 @@ in
 
     services.accounts-daemon.enable = true;
 
+    services.power-profiles-daemon.enable = true;
+    services.upower.enable = true;
+
     services.displayManager.sddm.enable = true;
     services.displayManager.sddm.wayland.enable = true;
 
@@ -59,6 +62,10 @@ in
       brightnessctl
       pavucontrol
       power-profiles-daemon
+      # papirus-icon-theme
+      adwaita-icon-theme
+      hicolor-icon-theme
+      xdg-utils
     ];
   };
 }

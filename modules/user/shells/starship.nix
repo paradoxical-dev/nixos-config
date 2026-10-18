@@ -39,7 +39,7 @@ in
         };
         git_branch = {
           symbol = "";
-          format = "[](fg:bright-cyan bg:black)[ $symbol $branch ](bg:bright-cyan fg:black)";
+          format = "[](fg:bright-cyan bg:none)[ $symbol $branch ](bg:bright-cyan fg:black)";
         };
         git_status = {
           untracked = "";
