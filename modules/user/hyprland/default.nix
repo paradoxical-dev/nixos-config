@@ -39,9 +39,17 @@ in
         enable = true;
         restartIfChanged = true;
       };
-      plugins = { };
+      plugins = {
+        dockerManager.enable = true;
+        wallpaperCarousel.enable = true;
+        emojiLauncher.enable = true;
+        githubNotifier.enable = true;
+        dankPomodoroTimer.enable = true;
+        dmsSessionizer.enable = true;
+        obsidianSearch.enable = true;
+        # nord.enabele = true;
+      };
     };
-    # services.dms.enable = cfg.dms.enable;
 
     xdg.configFile."hypr/hyprland.lua".source =
       config.lib.file.mkOutOfStoreSymlink "${hyprDots}/hyprland.lua";
