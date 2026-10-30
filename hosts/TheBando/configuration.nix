@@ -20,6 +20,11 @@
 
     bluetooth.enable = true;
     printing.enable = true;
+    syncthing = {
+      enable = true;
+      user = "gitmoney";
+      dataDir = "/home/gitmoney";
+    };
 
     fonts = {
       std = with pkgs; [

@@ -18,7 +18,7 @@
 
       editors = [
         "neovim"
-        # "vscodium"
+        "vscodium"
         # "emacs"
       ];
       # emacs.mail = true;
