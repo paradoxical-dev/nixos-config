@@ -22,6 +22,7 @@ in
         edit_mode = "vi";
         completions.algorithm = "fuzzy";
         use_kitty_protocol = true;
+        loadSessionVariables = true;
       };
       envFile.text = ''
         # FIX VI MODE #

@@ -78,6 +78,7 @@
   # the corresponding module is also enabled in ur configuration
   nixpkgs.config.permittedInsecurePackages = [
     "webull-desktop-9.3.0"
+    "firefox-esr-140-bin-unwrapped-140.17.0esr"
   ];
 
   # bootloader (grub)
@@ -110,8 +111,8 @@
     "rd.udev.log_level=3"
     "udev.log_priority=3"
   ];
-  boot.initrd.systemd.enable = true;
-  boot.initrd.verbose = false;
+  # boot.initrd.systemd.enable = true;
+  # boot.initrd.verbose = false;
 
   # boot animation
   # TODO: make this a separate module?
