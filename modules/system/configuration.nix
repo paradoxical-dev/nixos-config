@@ -6,6 +6,7 @@
   # default packages to always include
   environment.systemPackages = with pkgs; [
     git
+    gh
     neovim
     man-pages
     man-pages-posix

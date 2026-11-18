@@ -34,11 +34,13 @@ in
       konsole
       kate
       ktexteditor
+      baloo
+      baloo-widgets
     ];
 
     # TODO: move to user module?
     # extensions
-    environment.systemPackages =  with pkgs; [
+    environment.systemPackages = with pkgs; [
       plasma-panel-colorizer
       plasma-panel-spacer-extended
     ];

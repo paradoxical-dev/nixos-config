@@ -85,8 +85,8 @@ in
         ispell
         aspell
         aspellDicts.en
-        aspellDicts.en-computers
-        aspellDicts.en-science
+        # aspellDicts.en-computers
+        # aspellDicts.en-science
         wordnet
 
         # org mode

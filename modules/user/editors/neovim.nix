@@ -19,6 +19,7 @@ in
     home.packages = with pkgs; [
       neovim
       tree-sitter
+      go # needed for dbee plugin
       gcc # for installing tree-sitter parsers
       sqlite # for zeal plugin
       elinks # for apidocs plugin

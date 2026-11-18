@@ -57,6 +57,20 @@ in
         bind-key -r C-h select-window -t :-
         bind-key -r C-l select-window -t :+
 
+        # smart-splits
+        # bind-key -n C-h if -F "#{@pane-is-vim}" 'send-keys C-h' 'select-pane -L'
+        # bind-key -n C-j if -F "#{@pane-is-vim}" 'send-keys C-j' 'select-pane -D'
+        # bind-key -n C-k if -F "#{@pane-is-vim}" 'send-keys C-k' 'select-pane -U'
+        # bind-key -n C-l if -F "#{@pane-is-vim}" 'send-keys C-l' 'select-pane -R'
+        # bind-key -n 'C-\' if -F "#{@pane-is-vim}" 'send-keys C-\\' 'select-pane -l'
+        #
+        # bind-key -n M-Left  if -F "#{@pane-is-vim}" 'send-keys M-Left'  'resize-pane -L 3'
+        # bind-key -n M-Down  if -F "#{@pane-is-vim}" 'send-keys M-Down'  'resize-pane -D 3'
+        # bind-key -n M-Up    if -F "#{@pane-is-vim}" 'send-keys M-Up'    'resize-pane -U 3'
+        # bind-key -n M-Right if -F "#{@pane-is-vim}" 'send-keys M-Right' 'resize-pane -R 3'
+        # Keep C-l (clear screen) available in the tmux prefix table
+        # bind C-l send-keys 'C-l'
+
         # extra
         unbind r
         bind r source ~/.config/tmux/tmux.conf

@@ -19,11 +19,11 @@
       editors = [
         "neovim"
         "vscodium"
-        # "emacs"
+        "emacs"
       ];
-      # emacs.mail = true;
-      # emacs.daemon = true;
-      # emacs.eaf.enable = true;
+      emacs.mail = true;
+      emacs.daemon = true;
+      emacs.eaf.enable = true;
 
       browser = "brave";
 
