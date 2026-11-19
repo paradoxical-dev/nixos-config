@@ -17,6 +17,7 @@ in
   config = lib.mkIf cfg {
     programs.nushell = {
       enable = true;
+      loadSessionVariables = true;
       settings = {
         show_banner = false;
         edit_mode = "vi";
