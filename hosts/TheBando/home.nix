@@ -90,6 +90,8 @@
           enable = true;
           extraPkgs = with pkgs.rPackages; [
             tidyr
+            ggplot2
+            scales
           ];
         };
       };

@@ -10,9 +10,9 @@ let
 in
 {
   options = {
-    usersettings.langs.R = {
+    userSettings.langs.R = {
       enable = lib.mkEnableOption "Enable R with Rscript";
-      extrapkgs = lib.mkOption {
+      extraPkgs = lib.mkOption {
         default = [  ];
         description = "Extra R packages to include";
         type = lib.types.listOf lib.types.package;
@@ -20,6 +20,6 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
-    home.packages. = [ R ] ++ cfg.extraPkgs;
+    home.packages = with pkgs; [ R ] ++ cfg.extraPkgs;
   };
 }
