@@ -15,6 +15,7 @@
       ];
       starship.enable = true;
       cli = "extra";
+      zellij.enable = true;
       terminal-browser.enable = true;
 
       editors = [
