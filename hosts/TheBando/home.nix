@@ -15,6 +15,7 @@
       ];
       starship.enable = true;
       cli = "extra";
+      terminal-browser.enable = true;
 
       editors = [
         "neovim"
@@ -23,7 +24,7 @@
       ];
       emacs.mail = true;
       emacs.daemon = true;
-      emacs.eaf.enable = true;
+      # emacs.eaf.enable = true;
 
       browser = "brave";
 
@@ -78,6 +79,7 @@
             metakernel
             jupyter
             notebook
+            pylatexenc
           ];
         };
         lua = {

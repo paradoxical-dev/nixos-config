@@ -24,6 +24,8 @@
     dms.inputs.nixpkgs.follows = "nixpkgs";
     dms-plugin-registry.url = "github:AvengeMedia/dms-plugin-registry";
     dms-plugin-registry.inputs.nixpkgs.follows = "nixpkgs";
+
+    llm-agents.url = "github:numtide/llm-agents.nix"; # INFO: used for terminal-browser package
   };
 
   outputs =
