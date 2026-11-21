@@ -41,7 +41,7 @@
     # hyprland.ambxst.enable = true;
     # gnome.enable = true;
     # niri.enable = true;
-    plasma.enable = true;
+    # plasma.enable = true;
   };
 
   # nix-mineral settings

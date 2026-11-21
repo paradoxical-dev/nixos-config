@@ -34,6 +34,7 @@ in
       ripgrep-all
       rsync
       smartmontools
+      superfile
       tealdeer
       unzip
       w3m
