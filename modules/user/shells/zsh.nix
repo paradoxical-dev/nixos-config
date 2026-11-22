@@ -92,6 +92,7 @@ in
 
         # PATH EXTENSIONS #
         export PATH="$HOME/.config/emacs/bin:$PATH"
+        export PATH="$HOME/.cargo/bin:$PATH"
 
         # FZF #
         eval "$(fzf --zsh)"
