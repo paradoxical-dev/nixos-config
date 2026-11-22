@@ -15,7 +15,12 @@
       ];
       starship.enable = true;
       cli = "extra";
-      zellij.enable = true;
+      zellij = {
+        enable = true;
+        plugins = {
+          zjstatus = pkgs.zellijPlugins.zjstatus;
+        };
+      };
       terminal-browser.enable = true;
 
       editors = [
@@ -24,7 +29,7 @@
         "emacs"
       ];
       emacs.mail = true;
-      emacs.daemon = true;
+      # emacs.daemon = true;
       # emacs.eaf.enable = true;
 
       browser = "brave";
@@ -62,7 +67,7 @@
       # gnome.enable = true;
       # niri.enable = true;
       # niri.noctalia.enable = true;
-      plasma.enable = true;
+      # plasma.enable = true;
 
       langs = {
         zeal.enable = true;
